@@ -20,25 +20,16 @@ public class Entity : MonoBehaviour
     public int magDefense;
     public int speed;
     public string e_name;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public int tier;
+    
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
     {
         int dmg = 0;
 
         //calculation here
+
+        dmg = ((2 * attack) - ((defense + magDefense) / 2)) * 2;
 
         return dmg;
     }
@@ -48,7 +39,20 @@ public class Entity : MonoBehaviour
         int dmg = 0;
 
         //calculation here
-
+        dmg = ((2 * magic) - ((defense + magDefense) / 2)) * 2;
         return dmg;
+    }
+
+
+    //Damage taken from physical attacks
+    private void CalculateDamageTaken(int dmg)
+    {
+        hitpoints -= (dmg - defense);
+    }
+
+    //Damage taken from magic attacks
+    private void CalculateMagicDamageTaken(int dmg)
+    {
+        hitpoints -= (dmg - magDefense);
     }
 }
