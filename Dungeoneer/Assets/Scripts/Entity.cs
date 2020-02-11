@@ -21,7 +21,6 @@ public class Entity : MonoBehaviour
     public int speed;
     public string e_name;
     public int tier;
-    
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
     {
