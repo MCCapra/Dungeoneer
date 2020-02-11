@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    /*
+     * Michael Capra
+     * Item Class: Represents any item in the game
+     * 1/23/2020
+     */
+
+
     public int hitpoints;
     public int attack;
     public int defense;
@@ -12,6 +19,8 @@ public class Item : MonoBehaviour
     public int speed;
     public string e_name;
     public int tier;
+
+    public Effect ability; //This is the ability that the item may or may not have
     // Start is called before the first frame update
     void Start()
     {

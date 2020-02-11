@@ -55,4 +55,9 @@ public class Entity : MonoBehaviour
     {
         hitpoints -= (dmg - magDefense);
     }
+
+    //These methods will be overrriden by the specific enemy/character using them.
+    public void OnDamageTaken() { }
+    public void OnDamageDealt() { }
+    public void OnEndOfTurn() { }
 }
