@@ -20,6 +20,11 @@ public class Enemy : Entity
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public override void OnDamageTaken()
+    {
+
     }
 }

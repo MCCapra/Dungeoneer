@@ -56,7 +56,8 @@ public class Entity : MonoBehaviour
     }
 
     //These methods will be overrriden by the specific enemy/character using them.
-    public void OnDamageTaken() { }
-    public void OnDamageDealt() { }
-    public void OnEndOfTurn() { }
+    public virtual void OnDamageTaken() { }
+    public virtual void OnDamageDealt() { }
+    public virtual void OnEndOfTurn() { } 
+    public virtual void OnEnemyKill() { }
 }
