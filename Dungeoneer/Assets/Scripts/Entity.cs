@@ -60,4 +60,11 @@ public class Entity : MonoBehaviour
     public virtual void OnDamageDealt() { }
     public virtual void OnEndOfTurn() { } 
     public virtual void OnEnemyKill() { }
+
+    public virtual void TakeTurn() { }
+
+    private void Start()
+    {
+        maxHitpoints = hitpoints;
+    }
 }
