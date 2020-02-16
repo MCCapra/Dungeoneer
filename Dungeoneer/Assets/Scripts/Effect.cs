@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Effect : MonoBehaviour
+public abstract class Effect : ScriptableObject
 {
     /*
      * Michael Capra
@@ -10,8 +10,7 @@ public abstract class Effect : MonoBehaviour
      * 1/23/2020
      */
 
-    public abstract void OnDamageTaken();
-    public abstract void OnDamageDealt();
-    public abstract void OnEndOfTurn();
-    public abstract void OnEnemyKill();
+    public abstract void OnDamageTaken(Entity user, Entity receiver);
+    public abstract void OnDamageDealt(Entity user, Entity receiver);
+    public abstract void OnEndOfTurn(Entity user, Entity receiver);
 }

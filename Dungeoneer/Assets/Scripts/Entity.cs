@@ -21,6 +21,9 @@ public class Entity : MonoBehaviour
     public int speed;
     public string e_name;
     public int tier;
+
+    public Action basicAttack;
+    public Entity target;
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
     {
@@ -44,13 +47,13 @@ public class Entity : MonoBehaviour
 
 
     //Damage taken from physical attacks
-    private void CalculateDamageTaken(int dmg)
+    public void CalculateDamageTaken(int dmg)
     {
         hitpoints -= (dmg - defense);
     }
 
     //Damage taken from magic attacks
-    private void CalculateMagicDamageTaken(int dmg)
+    public void CalculateMagicDamageTaken(int dmg)
     {
         hitpoints -= (dmg - magDefense);
     }
@@ -59,7 +62,6 @@ public class Entity : MonoBehaviour
     public virtual void OnDamageTaken() { }
     public virtual void OnDamageDealt() { }
     public virtual void OnEndOfTurn() { } 
-    public virtual void OnEnemyKill() { }
 
     public virtual void TakeTurn() { }
 
