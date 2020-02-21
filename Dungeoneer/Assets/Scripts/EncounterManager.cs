@@ -136,6 +136,10 @@ public class EncounterManager : MonoBehaviour
                 break;
         }
 
+        actor.OnEndOfTurn();
+
+        //Update UI here
+
         if (actionStack.Count > 0)
         {
             StartTurn(actionStack.Pop().GetComponent<Entity>());
