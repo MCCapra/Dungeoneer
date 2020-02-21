@@ -47,6 +47,9 @@ public class EncounterManager : MonoBehaviour
     private Entity actor;
     private Action inProgress;
 
+    [SerializeField] private List<GameObject> hpBars;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -134,6 +137,25 @@ public class EncounterManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+
+        // update UI
+        for(int i = 0; i < enemies.Count; i++)
+        {
+            if(enemies[i].GetComponent<Enemy>().hitpoints <= 0)
+            {
+                Destroy(enemies[i]);
+                enemies.Remove(enemies[i]);
+            }
+            // Debug.Log(enemies[i].name);
+            GameObject enemy = GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
+            Debug.Log(enemy);
+            enemy.GetComponent<RectTransform>().localScale = new Vector3((float)enemies[i].GetComponent<Enemy>().hitpoints / enemies[i].GetComponent<Enemy>().maxHitpoints, 1, 1);
+        }
+
+        for (int i = 0; i < allies.Count; i++)
+        {
+            hpBars[i].GetComponent<RectTransform>().localScale = new Vector3((float)allies[i].GetComponent<Character>().hitpoints / allies[i].GetComponent<Character>().maxHitpoints, 1, 1);
         }
 
         if (actionStack.Count > 0)

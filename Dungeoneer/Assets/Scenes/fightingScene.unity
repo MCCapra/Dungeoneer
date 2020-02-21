@@ -120,61 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &25629728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 25629730}
-  - component: {fileID: 25629729}
-  m_Layer: 0
-  m_Name: TestAlly
-  m_TagString: Character
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &25629729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25629728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitpoints: 100
-  maxHitpoints: 0
-  attack: 1
-  defense: 1
-  magic: 1
-  magDefense: 1
-  speed: 10
-  e_name: testAlly
-  tier: 0
-  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
-  target: {fileID: 0}
-  items: []
---- !u!4 &25629730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25629728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 599.50684, y: 336.43112, z: -1349.4246}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143440076
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +555,7 @@ GameObject:
   - component: {fileID: 351490182}
   - component: {fileID: 351490181}
   - component: {fileID: 351490183}
+  - component: {fileID: 351490184}
   m_Layer: 5
   m_Name: p4
   m_TagString: Untagged
@@ -715,6 +661,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &351490184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351490179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 100
+  maxHitpoints: 100
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 10
+  e_name: testAlly2
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
+  target: {fileID: 1052240461}
+  items: []
 --- !u!1 &404655433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,62 +1687,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661233299}
   m_CullTransparentMesh: 0
---- !u!1 &681891552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 681891554}
-  - component: {fileID: 681891553}
-  m_Layer: 0
-  m_Name: TestEnemy
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &681891553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681891552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitpoints: 10
-  maxHitpoints: 0
-  attack: 1
-  defense: 1
-  magic: 1
-  magDefense: 1
-  speed: 5
-  e_name: testEnemy1
-  tier: 0
-  basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
-  target: {fileID: 0}
-  gold_reward: 0
-  itemDrop: {fileID: 0}
---- !u!4 &681891554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681891552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 599.50684, y: 336.43112, z: -1349.4246}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686138904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,6 +2182,7 @@ GameObject:
   - component: {fileID: 923448358}
   - component: {fileID: 923448357}
   - component: {fileID: 923448359}
+  - component: {fileID: 923448360}
   m_Layer: 5
   m_Name: p1
   m_TagString: Untagged
@@ -2373,6 +2288,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &923448360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923448355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 100
+  maxHitpoints: 100
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 10
+  e_name: testAlly
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
+  target: {fileID: 0}
+  items: []
 --- !u!1 &941849581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +2397,7 @@ GameObject:
   - component: {fileID: 967241975}
   - component: {fileID: 967241974}
   - component: {fileID: 967241976}
+  - component: {fileID: 967241977}
   m_Layer: 5
   m_Name: e3
   m_TagString: Untagged
@@ -2564,6 +2504,31 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &967241977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967241972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 10
+  maxHitpoints: 10
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 5
+  e_name: testEnemy2
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
+  target: {fileID: 0}
+  gold_reward: 0
+  itemDrop: {fileID: 0}
 --- !u!1 &971062419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3046,6 +3011,7 @@ GameObject:
   - component: {fileID: 1052240459}
   - component: {fileID: 1052240458}
   - component: {fileID: 1052240460}
+  - component: {fileID: 1052240461}
   m_Layer: 5
   m_Name: e1
   m_TagString: Untagged
@@ -3152,6 +3118,31 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1052240461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052240456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 10
+  maxHitpoints: 10
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 5
+  e_name: testEnemy1
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
+  target: {fileID: 0}
+  gold_reward: 0
+  itemDrop: {fileID: 0}
 --- !u!1 &1082473429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,6 +3155,7 @@ GameObject:
   - component: {fileID: 1082473432}
   - component: {fileID: 1082473431}
   - component: {fileID: 1082473433}
+  - component: {fileID: 1082473434}
   m_Layer: 5
   m_Name: p2
   m_TagString: Untagged
@@ -3269,6 +3261,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1082473434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082473429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 100
+  maxHitpoints: 100
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 10
+  e_name: testAlly2
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
+  target: {fileID: 0}
+  items: []
 --- !u!1 &1204297265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,6 +3745,7 @@ GameObject:
   - component: {fileID: 1267095741}
   - component: {fileID: 1267095740}
   - component: {fileID: 1267095742}
+  - component: {fileID: 1267095743}
   m_Layer: 5
   m_Name: p3
   m_TagString: Untagged
@@ -3834,6 +3851,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1267095743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267095738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 100
+  maxHitpoints: 100
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 10
+  e_name: testAlly2
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
+  target: {fileID: 1052240461}
+  items: []
 --- !u!1 &1304882720
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,61 +4394,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1536624469
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1536624471}
-  - component: {fileID: 1536624470}
-  m_Layer: 0
-  m_Name: TestAlly (1)
-  m_TagString: Character
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1536624470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536624469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitpoints: 100
-  maxHitpoints: 0
-  attack: 1
-  defense: 1
-  magic: 1
-  magDefense: 1
-  speed: 10
-  e_name: testAlly2
-  tier: 0
-  basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
-  target: {fileID: 0}
-  items: []
---- !u!4 &1536624471
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536624469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 599.50684, y: 336.43112, z: -1349.4246}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592497991
 GameObject:
   m_ObjectHideFlags: 0
@@ -4709,62 +4695,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683764058}
   m_CullTransparentMesh: 0
---- !u!1 &1751072760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1751072762}
-  - component: {fileID: 1751072761}
-  m_Layer: 0
-  m_Name: TestEnemy (1)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1751072761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751072760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitpoints: 10
-  maxHitpoints: 0
-  attack: 1
-  defense: 1
-  magic: 1
-  magDefense: 1
-  speed: 5
-  e_name: testEnemy2
-  tier: 0
-  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
-  target: {fileID: 0}
-  gold_reward: 0
-  itemDrop: {fileID: 0}
---- !u!4 &1751072762
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751072760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 599.50684, y: 336.43112, z: -1349.4246}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753238958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,6 +4707,7 @@ GameObject:
   - component: {fileID: 1753238961}
   - component: {fileID: 1753238960}
   - component: {fileID: 1753238962}
+  - component: {fileID: 1753238963}
   m_Layer: 5
   m_Name: e4
   m_TagString: Untagged
@@ -4883,6 +4814,31 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1753238963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753238958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 10
+  maxHitpoints: 10
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 5
+  e_name: testEnemy2
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
+  target: {fileID: 0}
+  gold_reward: 0
+  itemDrop: {fileID: 0}
 --- !u!1 &1762566182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5427,6 +5383,7 @@ GameObject:
   - component: {fileID: 1947556393}
   - component: {fileID: 1947556392}
   - component: {fileID: 1947556394}
+  - component: {fileID: 1947556395}
   m_Layer: 5
   m_Name: e2
   m_TagString: Untagged
@@ -5533,6 +5490,31 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1947556395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947556390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 10
+  maxHitpoints: 10
+  attack: 1
+  defense: 1
+  magic: 1
+  magDefense: 1
+  speed: 5
+  e_name: testEnemy2
+  tier: 0
+  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
+  target: {fileID: 0}
+  gold_reward: 0
+  itemDrop: {fileID: 0}
 --- !u!1 &1954270967
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,11 +6042,20 @@ MonoBehaviour:
   targetMenu: {fileID: 200378614}
   skillMenu: {fileID: 2098560386}
   enemies:
-  - {fileID: 681891552}
-  - {fileID: 1751072760}
+  - {fileID: 1052240456}
+  - {fileID: 1947556390}
+  - {fileID: 967241972}
+  - {fileID: 1753238958}
   allies:
-  - {fileID: 25629728}
-  - {fileID: 1536624469}
+  - {fileID: 923448355}
+  - {fileID: 1082473429}
+  - {fileID: 1267095738}
+  - {fileID: 351490179}
+  hpBars:
+  - {fileID: 941849581}
+  - {fileID: 1895269740}
+  - {fileID: 227709797}
+  - {fileID: 814364159}
 --- !u!1 &2052328159
 GameObject:
   m_ObjectHideFlags: 0
