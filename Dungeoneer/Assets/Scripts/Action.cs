@@ -15,7 +15,9 @@ public class Action : ScriptableObject
 
     [SerializeField] private Effect effect;
     [SerializeField] private TargetingType targetingType;
+    [SerializeField] private bool targetEnemy;
 
     public Effect AppliedEffect { get { return effect; } }
+    public bool TargetEnemy { get { return targetEnemy; } }
     public TargetingType TargetType { get { return targetingType; } }
 }

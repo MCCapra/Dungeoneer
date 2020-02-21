@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
   m_Name: BasicPhysicalCritAttack
   m_EditorClassIdentifier: 
-  effect: {fileID: 0}
-  targetingType: 0
+  effect: {fileID: 11400000, guid: 2bd766ed7b578004fbb6b9c0f27d695f, type: 2}
+  targetingType: 1
+  targetEnemy: 1

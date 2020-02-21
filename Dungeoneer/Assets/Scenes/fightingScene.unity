@@ -158,8 +158,9 @@ MonoBehaviour:
   speed: 10
   e_name: testAlly
   tier: 0
-  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
+  basicAttack: {fileID: 11400000, guid: eded0c4c7ce6c1f419a32521212fd6a4, type: 2}
   target: {fileID: 0}
+  skills: []
   items: []
 --- !u!4 &25629730
 Transform:
@@ -1757,6 +1758,7 @@ MonoBehaviour:
   tier: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
+  skills: []
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!4 &681891554
@@ -4393,6 +4395,7 @@ MonoBehaviour:
   tier: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
+  skills: []
   items: []
 --- !u!4 &1536624471
 Transform:
@@ -4749,6 +4752,7 @@ MonoBehaviour:
   tier: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
+  skills: []
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!4 &1751072762
