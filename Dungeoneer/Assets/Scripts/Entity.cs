@@ -24,6 +24,8 @@ public class Entity : MonoBehaviour
 
     public Action basicAttack;
     public Entity target;
+
+    public List<Action> skills; //Skills that the player will have access to.
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
     {
@@ -50,12 +52,22 @@ public class Entity : MonoBehaviour
     public void CalculateDamageTaken(int dmg)
     {
         hitpoints -= (dmg - defense);
+
+        if (hitpoints < 0) hitpoints = 0;
     }
 
     //Damage taken from magic attacks
     public void CalculateMagicDamageTaken(int dmg)
     {
         hitpoints -= (dmg - magDefense);
+        if (hitpoints < 0) hitpoints = 0;
+    }
+
+    public void Heal(int heal)
+    {
+        hitpoints += heal;
+
+        if (hitpoints > maxHitpoints) hitpoints = maxHitpoints;
     }
 
     //These methods will be overrriden by the specific enemy/character using them.

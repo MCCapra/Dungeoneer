@@ -11,6 +11,7 @@ public class Character : Entity
      */
 
     public List<GameObject> items; //Items the character has, 0 slot is helmet, 1 slot is weapon, 2 slot is armor
+    
     // Start is called before the first frame update
     void Start()
     {

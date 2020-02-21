@@ -23,10 +23,25 @@ public class DamageEffect : Effect
         switch (damageType)
         {
             case DamageType.Physical:
-                receiver.CalculateDamageTaken(user.CalculatePhysicalDamage());
+
+                if(Random.Range(0.0f, 1.0f) <= critChance)
+                {
+                    receiver.CalculateDamageTaken(user.CalculatePhysicalDamage() * 2);
+                }
+                else
+                {
+                    receiver.CalculateDamageTaken(user.CalculatePhysicalDamage());
+                }
                 break;
             case DamageType.Magical:
-                receiver.CalculateMagicDamageTaken(user.CalculateMagicDamage());
+                if (Random.Range(0.0f, 1.0f) <= critChance)
+                {
+                    receiver.CalculateMagicDamageTaken(user.CalculateMagicDamage() * 2);
+                }
+                else
+                {
+                    receiver.CalculateMagicDamageTaken(user.CalculateMagicDamage());
+                }
                 break;
             default:
                 break;

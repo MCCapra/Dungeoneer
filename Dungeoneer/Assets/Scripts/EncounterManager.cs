@@ -87,7 +87,7 @@ public class EncounterManager : MonoBehaviour
         {
             case Action.TargetingType.Single:
                 //Toggle correct menu
-                ShowTargetMenu(true);
+                ShowTargetMenu(a.TargetEnemy); //change this to be set by the action chosen
                 break;
             case Action.TargetingType.None:
             case Action.TargetingType.All:
@@ -133,12 +133,27 @@ public class EncounterManager : MonoBehaviour
                 break;
             case Action.TargetingType.All:
                 // TODO: apply to all enemies
+                if(inProgress.TargetEnemy)
+                {
+                    foreach(GameObject e in enemies)
+                    {
+                        inProgress.AppliedEffect.OnEndOfTurn(actor, e.GetComponent<Enemy>());
+                    }
+                }
+                else
+                {
+                    foreach (GameObject e in allies)
+                    {
+                        inProgress.AppliedEffect.OnEndOfTurn(actor, e.GetComponent<Character>());
+                    }
+                }
                 inProgress.AppliedEffect.OnEndOfTurn(actor, actor.target);
                 break;
             default:
                 break;
         }
 
+        actor.OnEndOfTurn();
         // update UI
         for(int i = 0; i < enemies.Count; i++)
         {
@@ -195,7 +210,7 @@ public class EncounterManager : MonoBehaviour
             potentialTargets = allies;
         }
 
-        for (int i = 0; i < targetMenu.transform.childCount; i++)
+        for (int i = 0; i < targetMenu.transform.childCount - 1; i++)
         {
             if (i >= potentialTargets.Count)
             {
@@ -222,6 +237,24 @@ public class EncounterManager : MonoBehaviour
         skillMenu.SetActive(true);
         baseMenu.SetActive(false);
         currentMenu = MenuState.Skills;
+
+        for(int i = 0; i < skillMenu.transform.childCount - 1; i++)
+        {
+            if(i >= actor.skills.Count)
+            {
+                targetMenu.transform.GetChild(i).gameObject.SetActive(false);
+            }
+            else
+            {
+                targetMenu.transform.GetChild(i).gameObject.SetActive(true);
+
+                Action a = actor.skills[i];
+
+                ActionButton button = targetMenu.transform.GetChild(i).GetComponent<ActionButton>();
+                button.GetComponentInChildren<Text>().text = a.name;
+                button.SetAction(a);
+            }
+        }
     }
 
     private void Initiative()
