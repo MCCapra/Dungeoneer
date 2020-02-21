@@ -161,6 +161,7 @@ public class EncounterManager : MonoBehaviour
             {
                 Destroy(enemies[i]);
                 enemies.Remove(enemies[i]);
+                return;
             }
             // Debug.Log(enemies[i].name);
             GameObject enemy = GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
