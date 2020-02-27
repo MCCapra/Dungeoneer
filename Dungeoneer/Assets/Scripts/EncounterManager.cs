@@ -211,7 +211,7 @@ public class EncounterManager : MonoBehaviour
             potentialTargets = allies;
         }
 
-        for (int i = 0; i < targetMenu.transform.childCount - 1; i++)
+        for (int i = 0; i < targetMenu.transform.childCount - 2; i++)
         {
             if (i >= potentialTargets.Count)
             {
@@ -239,7 +239,7 @@ public class EncounterManager : MonoBehaviour
         baseMenu.SetActive(false);
         currentMenu = MenuState.Skills;
 
-        for(int i = 0; i < skillMenu.transform.childCount - 1; i++)
+        for(int i = 0; i < skillMenu.transform.childCount - 3; i++)
         {
             if(i >= actor.skills.Count)
             {
