@@ -48,6 +48,10 @@ public class Entity : MonoBehaviour
         return dmg;
     }
 
+    public int CalculateHealingDone()
+    {
+        return (int)magic / 2;
+    }
 
     //Damage taken from physical attacks
     public void CalculateDamageTaken(int dmg)
@@ -64,13 +68,13 @@ public class Entity : MonoBehaviour
         if (hitpoints < 0) hitpoints = 0;
     }
 
-    public void Heal(int heal)
+    public void CalculateHealingTaken(int heal)
     {
         hitpoints += heal;
 
         if (hitpoints > maxHitpoints) hitpoints = maxHitpoints;
     }
-
+    
     //These methods will be overrriden by the specific enemy/character using them.
     public virtual void OnDamageTaken() { }
     public virtual void OnDamageDealt() { }
