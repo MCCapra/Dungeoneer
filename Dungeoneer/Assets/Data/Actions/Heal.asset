@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
-  m_Name: BasicPhysicalCritAttack
+  m_Name: Heal
   m_EditorClassIdentifier: 
-  a_name: BasicAttackCritPhysical
-  effect: {fileID: 11400000, guid: 2bd766ed7b578004fbb6b9c0f27d695f, type: 2}
+  a_name: Heal
+  effect: {fileID: 11400000, guid: 8ddd7ca905804c743b601ce7e942f40a, type: 2}
   targetingType: 1
-  targetEnemy: 1
+  targetEnemy: 0

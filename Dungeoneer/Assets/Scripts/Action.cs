@@ -12,6 +12,7 @@ using UnityEngine;
 public class Action : ScriptableObject
 {
     public enum TargetingType { None, Single, All };
+    public string a_name;
 
     [SerializeField] private Effect effect;
     [SerializeField] private TargetingType targetingType;

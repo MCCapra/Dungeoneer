@@ -36,6 +36,11 @@ public class Entity : MonoBehaviour
 
         dmg = ((2 * attack) - ((defense + magDefense) / 2)) * 2;
 
+        if(dmg <= 0)
+        {
+            dmg = 1;
+        }
+
         return dmg;
     }
 
@@ -45,6 +50,12 @@ public class Entity : MonoBehaviour
 
         //calculation here
         dmg = ((2 * magic) - ((defense + magDefense) / 2)) * 2;
+
+        if(dmg <= 0)
+        {
+            dmg = 1;
+        }
+
         return dmg;
     }
 
@@ -56,16 +67,28 @@ public class Entity : MonoBehaviour
     //Damage taken from physical attacks
     public void CalculateDamageTaken(int dmg)
     {
-        hitpoints -= (dmg - defense);
+        dmg -= defense;
+
+        if (dmg < 0) dmg = 0;
+
+        hitpoints -= dmg;
 
         if (hitpoints < 0) hitpoints = 0;
+
+        if (hitpoints > maxHitpoints) hitpoints = maxHitpoints;
     }
 
     //Damage taken from magic attacks
     public void CalculateMagicDamageTaken(int dmg)
     {
-        hitpoints -= (dmg - magDefense);
+        dmg -= magDefense;
+
+        if (dmg < 0) dmg = 0;
+
+        hitpoints -= dmg;
+
         if (hitpoints < 0) hitpoints = 0;
+        if (hitpoints > maxHitpoints) hitpoints = maxHitpoints;
     }
 
     public void CalculateHealingTaken(int heal)
@@ -85,5 +108,6 @@ public class Entity : MonoBehaviour
     private void Start()
     {
         maxHitpoints = hitpoints;
+        StatusEffects = new List<Effect>();
     }
 }

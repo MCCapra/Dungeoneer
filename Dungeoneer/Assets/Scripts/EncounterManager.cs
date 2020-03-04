@@ -252,7 +252,7 @@ public class EncounterManager : MonoBehaviour
                 Action a = actor.skills[i];
 
                 ActionButton button = targetMenu.transform.GetChild(i).GetComponent<ActionButton>();
-                button.GetComponentInChildren<Text>().text = a.name;
+                button.GetComponentInChildren<Text>().text = a.a_name;
                 button.SetAction(a);
             }
         }
