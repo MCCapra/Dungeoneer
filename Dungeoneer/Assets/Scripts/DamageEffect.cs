@@ -8,6 +8,8 @@ public class DamageEffect : Effect
     public enum DamageType { Physical, Magical };
     [Range(0,1.0f)]
     public float critChance;
+    [Range(0, 2.0f)]
+    public float damageMod;
 
     [SerializeField] private DamageType damageType;
     public override void OnDamageDealt(Entity user, Entity receiver)
@@ -26,21 +28,21 @@ public class DamageEffect : Effect
 
                 if(Random.Range(0.0f, 1.0f) <= critChance)
                 {
-                    receiver.CalculateDamageTaken(user.CalculatePhysicalDamage() * 2);
+                    receiver.CalculateDamageTaken((int)(user.CalculatePhysicalDamage() * 2 * damageMod));
                 }
                 else
                 {
-                    receiver.CalculateDamageTaken(user.CalculatePhysicalDamage());
+                    receiver.CalculateDamageTaken((int)(user.CalculatePhysicalDamage() * damageMod));
                 }
                 break;
             case DamageType.Magical:
                 if (Random.Range(0.0f, 1.0f) <= critChance)
                 {
-                    receiver.CalculateMagicDamageTaken(user.CalculateMagicDamage() * 2);
+                    receiver.CalculateMagicDamageTaken((int)(user.CalculateMagicDamage() * 2 * damageMod));
                 }
                 else
                 {
-                    receiver.CalculateMagicDamageTaken(user.CalculateMagicDamage());
+                    receiver.CalculateMagicDamageTaken((int)(user.CalculateMagicDamage() * damageMod));
                 }
                 break;
             default:

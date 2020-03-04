@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3797fda3dcf10a458cae1741fc39743, type: 3}
-  m_Name: SimplePhysicalDamageEffect
+  m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
+  m_Name: Fireball
   m_EditorClassIdentifier: 
-  critChance: 0
-  damageMod: 1
-  damageType: 0
+  effect: {fileID: 11400000, guid: b700d32d85024db44ba74c4fc1313221, type: 2}
+  targetingType: 1
+  targetEnemy: 1

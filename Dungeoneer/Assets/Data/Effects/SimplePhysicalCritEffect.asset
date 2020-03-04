@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SimplePhysicalCritEffect
   m_EditorClassIdentifier: 
   critChance: 0.1
+  damageMod: 1
   damageType: 0

@@ -25,6 +25,7 @@ public class Entity : MonoBehaviour
     public Action basicAttack;
     public Entity target;
 
+    public List<Effect> StatusEffects;
     public List<Action> skills; //Skills that the player will have access to.
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
