@@ -54,6 +54,7 @@ public class EncounterManager : MonoBehaviour
     void Start()
     {
         actionStack = new Stack<GameObject>();
+        UpdateUI();
         Initiative();
     }
 
@@ -69,6 +70,8 @@ public class EncounterManager : MonoBehaviour
         inProgress = null;
         ShowBaseMenu();
         currentMenu = MenuState.Base;
+
+        baseMenu.transform.GetChild(5).GetComponent<Text>().text = ent.GetComponent<Entity>().e_name + "'s Turn";
 
         if(actor is Enemy)
         {
@@ -155,24 +158,8 @@ public class EncounterManager : MonoBehaviour
 
         actor.OnEndOfTurn();
         // update UI
-        for(int i = 0; i < enemies.Count; i++)
-        {
-            if(enemies[i].GetComponent<Enemy>().hitpoints <= 0)
-            {
-                Destroy(enemies[i]);
-                enemies.Remove(enemies[i]);
-                return;
-            }
-            // Debug.Log(enemies[i].name);
-            GameObject enemy = GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
-            Debug.Log(enemy);
-            enemy.GetComponent<RectTransform>().localScale = new Vector3((float)enemies[i].GetComponent<Enemy>().hitpoints / enemies[i].GetComponent<Enemy>().maxHitpoints, 1, 1);
-        }
+        UpdateUI();
 
-        for (int i = 0; i < allies.Count; i++)
-        {
-            hpBars[i].GetComponent<RectTransform>().localScale = new Vector3((float)allies[i].GetComponent<Character>().hitpoints / allies[i].GetComponent<Character>().maxHitpoints, 1, 1);
-        }
 
         if (actionStack.Count > 0)
         {
@@ -243,15 +230,15 @@ public class EncounterManager : MonoBehaviour
         {
             if(i >= actor.skills.Count)
             {
-                targetMenu.transform.GetChild(i).gameObject.SetActive(false);
+                skillMenu.transform.GetChild(i).gameObject.SetActive(false);
             }
             else
             {
-                targetMenu.transform.GetChild(i).gameObject.SetActive(true);
+                skillMenu.transform.GetChild(i).gameObject.SetActive(true);
 
                 Action a = actor.skills[i];
 
-                ActionButton button = targetMenu.transform.GetChild(i).GetComponent<ActionButton>();
+                ActionButton button = skillMenu.transform.GetChild(i).GetComponent<ActionButton>();
                 button.GetComponentInChildren<Text>().text = a.a_name;
                 button.SetAction(a);
             }
@@ -285,5 +272,32 @@ public class EncounterManager : MonoBehaviour
         //Debug.Log(actionStack.Peek().name);
 
         StartTurn(actionStack.Pop().GetComponent<Entity>());
+    }
+
+    private void UpdateUI()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Enemy e = enemies[i].GetComponent<Enemy>();
+            if (e.hitpoints <= 0)
+            {
+                Destroy(enemies[i]);
+                enemies.Remove(enemies[i]);
+                return;
+            }
+            // Debug.Log(enemies[i].name);
+            GameObject enemy = GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
+            Debug.Log(enemy);
+            enemy.GetComponent<RectTransform>().localScale = new Vector3((float)e.hitpoints / e.maxHitpoints, 1, 1);
+        }
+
+        for (int i = 0; i < allies.Count; i++)
+        {
+            Character a = allies[i].GetComponent<Character>();
+            hpBars[i].transform.GetChild(0).GetComponent<RectTransform>().localScale = new Vector3((float)a.hitpoints / a.maxHitpoints, 1, 1);
+
+            //update names if needed
+            hpBars[i].transform.GetComponentInChildren<Text>().text = a.e_name;
+        }
     }
 }
