@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   a_name: Heal
+  description: Envoke a restorative word, healing an ally.
   effect: {fileID: 11400000, guid: 8ddd7ca905804c743b601ce7e942f40a, type: 2}
   targetingType: 1
   targetEnemy: 0

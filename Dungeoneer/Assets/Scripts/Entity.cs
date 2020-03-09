@@ -22,10 +22,12 @@ public class Entity : MonoBehaviour
     public string e_name;
     public int tier;
 
+    public int effectMaxLength; //Maximum length of ANY effect in the game.
+
     public Action basicAttack;
     public Entity target;
 
-    public List<Effect> StatusEffects;
+    public List<List<Effect>> StatusEffects;
     public List<Action> skills; //Skills that the player will have access to.
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
@@ -99,15 +101,35 @@ public class Entity : MonoBehaviour
     }
     
     //These methods will be overrriden by the specific enemy/character using them.
-    public virtual void OnDamageTaken() { }
-    public virtual void OnDamageDealt() { }
-    public virtual void OnEndOfTurn() { } 
+    public void OnDamageTaken(int dmg)
+    {
+        //loop through effects, call OnDamageTaken for each
+        for (int i = 0; i < StatusEffects.Count; i++)
+        {
+            for (int j = 0; j < StatusEffects[i].Count; j++)
+            {
 
+            }
+        }
+    }
+    public void OnDamageDealt()
+    {
+
+    }
+    public  void OnEndOfTurn()
+    {
+
+    } 
     public virtual void TakeTurn() { }
 
     private void Start()
     {
         maxHitpoints = hitpoints;
-        StatusEffects = new List<Effect>();
+        StatusEffects = new List<List<Effect>>();
+
+        for(int i = 0; i < effectMaxLength; i++)
+        {
+            StatusEffects.Add(new List<Effect>());
+        }
     }
 }

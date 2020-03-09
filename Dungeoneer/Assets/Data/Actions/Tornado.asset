@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
   m_Name: Tornado
   m_EditorClassIdentifier: 
+  a_name: Tornado
+  description: Launch a powerful gust of wind that blows away your enemies.
   effect: {fileID: 11400000, guid: b6e3c4a3bb03cf04f8b8c425ed549e5d, type: 2}
   targetingType: 2
-  targetEnemy: 0
+  targetEnemy: 1

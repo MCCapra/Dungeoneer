@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
   m_Name: Bomb Throw
   m_EditorClassIdentifier: 
+  a_name: Bomb Throw
+  description: Throw a gunpowder bomb at your enemies, blowing them apart.
   effect: {fileID: 11400000, guid: dbabfe6fe251d9b48a864794c3bcb4f5, type: 2}
   targetingType: 2
-  targetEnemy: 0
+  targetEnemy: 1

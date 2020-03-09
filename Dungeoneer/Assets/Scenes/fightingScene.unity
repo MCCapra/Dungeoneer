@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 0}
-  manager: {fileID: 0}
+  manager: {fileID: 2008879173}
 --- !u!1 &200378614
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3469,7 +3469,7 @@ MonoBehaviour:
   maxHitpoints: 100
   attack: 1
   defense: 1
-  magic: 1
+  magic: 5
   magDefense: 1
   speed: 10
   e_name: testAlly2
@@ -3477,7 +3477,8 @@ MonoBehaviour:
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
   StatusEffects: []
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: 36b1f21f2cf44bc4d9f973dd309b3813, type: 2}
   items: []
 --- !u!1 &1204297265
 GameObject:
@@ -4123,7 +4124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4917,7 +4918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5071,7 +5072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6039,7 +6040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6339,7 +6340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6508,7 +6509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 0}
-  manager: {fileID: 0}
+  manager: {fileID: 2008879173}
 --- !u!1 &1968835500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,8 +6840,8 @@ MonoBehaviour:
   targetMenu: {fileID: 200378614}
   skillMenu: {fileID: 2098560386}
   enemies:
-  - {fileID: 1052240456}
   - {fileID: 1947556390}
+  - {fileID: 1052240456}
   - {fileID: 967241972}
   - {fileID: 1753238958}
   allies:
@@ -6996,7 +6997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 0}
-  manager: {fileID: 0}
+  manager: {fileID: 2008879173}
 --- !u!1 &2093401228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7214,7 +7215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 0}
-  manager: {fileID: 0}
+  manager: {fileID: 2008879173}
 --- !u!1 &2098560386
 GameObject:
   m_ObjectHideFlags: 0

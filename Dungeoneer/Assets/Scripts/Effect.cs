@@ -11,6 +11,8 @@ public abstract class Effect : ScriptableObject
      */
 
     public abstract void OnDamageTaken(Entity user, Entity receiver);
+
+    public abstract int OnDamageTaken(int dmg);
     public abstract void OnDamageDealt(Entity user, Entity receiver);
     public abstract void OnEndOfTurn(Entity user, Entity receiver);
 }

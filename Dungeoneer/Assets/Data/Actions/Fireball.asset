@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   a_name: Fireball
+  description: Launch a fireball at an enemy.
   effect: {fileID: 11400000, guid: b700d32d85024db44ba74c4fc1313221, type: 2}
   targetingType: 1
   targetEnemy: 1

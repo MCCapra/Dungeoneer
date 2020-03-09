@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
   m_Name: Smite
   m_EditorClassIdentifier: 
+  a_name: Smite
+  description: Strike an enemy with a powerful empower strike.
   effect: {fileID: 11400000, guid: b700d32d85024db44ba74c4fc1313221, type: 2}
   targetingType: 1
   targetEnemy: 1

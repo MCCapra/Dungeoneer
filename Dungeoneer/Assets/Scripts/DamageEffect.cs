@@ -42,7 +42,8 @@ public class DamageEffect : Effect
                 }
                 else
                 {
-                    receiver.CalculateMagicDamageTaken((int)(user.CalculateMagicDamage() * damageMod));
+                    int dmg = (int)(user.CalculateMagicDamage() * damageMod);
+                    receiver.CalculateMagicDamageTaken(dmg);
                 }
                 break;
             default:

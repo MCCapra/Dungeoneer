@@ -138,19 +138,18 @@ public class EncounterManager : MonoBehaviour
                 // TODO: apply to all enemies
                 if(inProgress.TargetEnemy)
                 {
-                    foreach(GameObject e in enemies)
+                    for(int i = 0; i < enemies.Count; i++)
                     {
-                        inProgress.AppliedEffect.OnEndOfTurn(actor, e.GetComponent<Enemy>());
+                        inProgress.AppliedEffect.OnEndOfTurn(actor, enemies[i].GetComponent<Enemy>());
                     }
                 }
                 else
                 {
                     foreach (GameObject e in allies)
                     {
-                        inProgress.AppliedEffect.OnEndOfTurn(actor, e.GetComponent<Character>());
+                        inProgress.AppliedEffect.OnEndOfTurn(actor, e.GetComponent<Entity>());
                     }
                 }
-                inProgress.AppliedEffect.OnEndOfTurn(actor, actor.target);
                 break;
             default:
                 break;
