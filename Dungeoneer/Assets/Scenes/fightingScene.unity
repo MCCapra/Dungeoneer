@@ -860,9 +860,11 @@ MonoBehaviour:
   speed: 10
   e_name: testAlly4
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 1052240461}
-  StatusEffects: []
   skills: []
   items: []
 --- !u!1 &404655433
@@ -2570,9 +2572,11 @@ MonoBehaviour:
   speed: 5
   e_name: testEnemy3
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
-  StatusEffects: []
   skills: []
   gold_reward: 0
   itemDrop: {fileID: 0}
@@ -3186,9 +3190,11 @@ MonoBehaviour:
   speed: 5
   e_name: testEnemy1
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
-  StatusEffects: []
   skills: []
   gold_reward: 0
   itemDrop: {fileID: 0}
@@ -3474,9 +3480,11 @@ MonoBehaviour:
   speed: 10
   e_name: testAlly2
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
-  StatusEffects: []
   skills:
   - {fileID: 11400000, guid: 36b1f21f2cf44bc4d9f973dd309b3813, type: 2}
   items: []
@@ -4067,9 +4075,11 @@ MonoBehaviour:
   speed: 10
   e_name: testAlly3
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 1052240461}
-  StatusEffects: []
   skills: []
   items: []
 --- !u!1 &1269895751
@@ -5462,9 +5472,11 @@ MonoBehaviour:
   speed: 5
   e_name: testEnemy4
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
-  StatusEffects: []
   skills: []
   gold_reward: 0
   itemDrop: {fileID: 0}
@@ -6283,9 +6295,11 @@ MonoBehaviour:
   speed: 5
   e_name: testEnemy2
   tier: 0
+  maxMana: 0
+  mana: 0
+  effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
-  StatusEffects: []
   skills: []
   gold_reward: 0
   itemDrop: {fileID: 0}
@@ -6849,6 +6863,16 @@ MonoBehaviour:
   - {fileID: 1082473429}
   - {fileID: 1267095738}
   - {fileID: 351490179}
+  enemyPositions:
+  - {x: 254, y: 158, z: 0}
+  - {x: 124, y: 109, z: 0}
+  - {x: 254, y: 39, z: 0}
+  - {x: 124, y: -21, z: 0}
+  allyPositions:
+  - {x: -200, y: 169, z: 0}
+  - {x: -330, y: 113, z: 0}
+  - {x: -200, y: 39, z: 0}
+  - {x: -330, y: 11, z: 0}
   hpBars:
   - {fileID: 1238461153}
   - {fileID: 617656764}

@@ -52,7 +52,13 @@ public class DamageEffect : Effect
 
         Debug.Log(user.e_name + " hit " + receiver.e_name + " with " + System.Enum.GetName(typeof(DamageType), damageType) + " damage!");
 
-        user.OnDamageDealt();
-        receiver.OnDamageTaken();
+        //user.OnDamageDealt();
+        //receiver.OnDamageTaken();
+    }
+
+    //Not used for now, potentially used later
+    public override int OnDamageTaken(int dmg)
+    {
+        return dmg;
     }
 }

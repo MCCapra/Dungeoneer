@@ -47,6 +47,10 @@ public class EncounterManager : MonoBehaviour
     private Entity actor;
     private Action inProgress;
 
+    public List<Vector3> enemyPositions; //positions for enemies on canvas
+    public List<Vector3> allyPositions; //positions for allies on canvas
+
+
     [SerializeField] private List<GameObject> hpBars;
 
 

@@ -21,6 +21,8 @@ public class Entity : MonoBehaviour
     public int speed;
     public string e_name;
     public int tier;
+    public int maxMana;
+    public int mana; //Mana cost of an ability
 
     public int effectMaxLength; //Maximum length of ANY effect in the game.
 

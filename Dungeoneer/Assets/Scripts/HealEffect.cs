@@ -19,4 +19,9 @@ public class HealEffect : Effect
     {
         receiver.CalculateHealingTaken((int)(user.CalculateHealingDone() * healMod));
     }
+
+    public override int OnDamageTaken(int dmg)
+    {
+        return dmg;
+    }
 }
