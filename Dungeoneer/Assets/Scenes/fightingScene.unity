@@ -855,16 +855,21 @@ MonoBehaviour:
   maxHitpoints: 100
   attack: 1
   defense: 1
-  magic: 1
+  magic: 5
   magDefense: 1
   speed: 10
   e_name: testAlly4
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
-  target: {fileID: 1052240461}
+  target: {fileID: 0}
   skills: []
   items: []
 --- !u!1 &404655433
@@ -2563,8 +2568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 10
-  maxHitpoints: 10
+  hitpoints: 50
+  maxHitpoints: 50
   attack: 1
   defense: 1
   magic: 1
@@ -2574,6 +2579,11 @@ MonoBehaviour:
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
@@ -3181,8 +3191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 10
-  maxHitpoints: 10
+  hitpoints: 50
+  maxHitpoints: 50
   attack: 1
   defense: 1
   magic: 1
@@ -3192,6 +3202,11 @@ MonoBehaviour:
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
@@ -3482,6 +3497,11 @@ MonoBehaviour:
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
@@ -4070,16 +4090,21 @@ MonoBehaviour:
   maxHitpoints: 100
   attack: 1
   defense: 1
-  magic: 1
+  magic: 5
   magDefense: 1
   speed: 10
   e_name: testAlly3
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
-  target: {fileID: 1052240461}
+  target: {fileID: 0}
   skills: []
   items: []
 --- !u!1 &1269895751
@@ -5463,8 +5488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 10
-  maxHitpoints: 10
+  hitpoints: 50
+  maxHitpoints: 50
   attack: 1
   defense: 1
   magic: 1
@@ -5474,6 +5499,11 @@ MonoBehaviour:
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
@@ -6286,8 +6316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b0f6ebc9b43ed4f9ef1356d1d1d8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 10
-  maxHitpoints: 10
+  hitpoints: 50
+  maxHitpoints: 50
   attack: 1
   defense: 1
   magic: 1
@@ -6297,6 +6327,11 @@ MonoBehaviour:
   tier: 0
   maxMana: 0
   mana: 0
+  attMod: 0
+  defMod: 0
+  magMod: 0
+  mdefMod: 0
+  spdMod: 0
   effectMaxLength: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}

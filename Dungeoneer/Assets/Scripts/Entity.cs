@@ -21,8 +21,15 @@ public class Entity : MonoBehaviour
     public int speed;
     public string e_name;
     public int tier;
-    public int maxMana;
-    public int mana; //Mana cost of an ability
+    public int maxMana; //Maximum mana
+    public int mana; //Current mana
+
+    //These values are calculated at the end of each turn
+    public int attMod;
+    public int defMod;
+    public int magMod;
+    public int mdefMod;
+    public int spdMod;
 
     public int effectMaxLength; //Maximum length of ANY effect in the game.
 
@@ -38,7 +45,7 @@ public class Entity : MonoBehaviour
 
         //calculation here
 
-        dmg = ((2 * attack) - ((defense + magDefense) / 2)) * 2;
+        dmg = ((2 * (attack + attMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
 
         if(dmg <= 0)
         {
@@ -53,7 +60,7 @@ public class Entity : MonoBehaviour
         int dmg = 0;
 
         //calculation here
-        dmg = ((2 * magic) - ((defense + magDefense) / 2)) * 2;
+        dmg = ((2 * (magic + magMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
 
         if(dmg <= 0)
         {
@@ -65,13 +72,13 @@ public class Entity : MonoBehaviour
 
     public int CalculateHealingDone()
     {
-        return (int)magic / 2;
+        return (int)(magic + magMod) / 2;
     }
 
     //Damage taken from physical attacks
     public void CalculateDamageTaken(int dmg)
     {
-        dmg -= defense;
+        dmg -= (defense + defMod);
 
         if (dmg < 0) dmg = 0;
 
@@ -85,7 +92,7 @@ public class Entity : MonoBehaviour
     //Damage taken from magic attacks
     public void CalculateMagicDamageTaken(int dmg)
     {
-        dmg -= magDefense;
+        dmg -= (magDefense - mdefMod);
 
         if (dmg < 0) dmg = 0;
 
@@ -103,22 +110,14 @@ public class Entity : MonoBehaviour
     }
     
     //These methods will be overrriden by the specific enemy/character using them.
-    public void OnDamageTaken(int dmg)
+    public virtual void OnDamageTaken(int dmg)
     {
-        //loop through effects, call OnDamageTaken for each
-        for (int i = 0; i < StatusEffects.Count; i++)
-        {
-            for (int j = 0; j < StatusEffects[i].Count; j++)
-            {
-
-            }
-        }
     }
-    public void OnDamageDealt()
+    public virtual void OnDamageDealt()
     {
 
     }
-    public  void OnEndOfTurn()
+    public virtual void OnEndOfTurn()
     {
 
     } 
@@ -133,5 +132,10 @@ public class Entity : MonoBehaviour
         {
             StatusEffects.Add(new List<Effect>());
         }
+    }
+
+    public void ApplyEffect(Effect eff)
+    {
+        StatusEffects[eff.EffectLength].Add(eff);
     }
 }

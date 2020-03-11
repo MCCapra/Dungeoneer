@@ -20,7 +20,7 @@ public class DamageEffect : Effect
     {
     }
 
-    public override void OnEndOfTurn(Entity user, Entity receiver)
+    public override void OnEffectApplied(Entity user, Entity receiver)
     {
         switch (damageType)
         {
@@ -60,5 +60,9 @@ public class DamageEffect : Effect
     public override int OnDamageTaken(int dmg)
     {
         return dmg;
+    }
+
+    public override void OnEndOfTurn(Entity user, Entity receiver)
+    {
     }
 }

@@ -15,9 +15,14 @@ public class HealEffect : Effect
     {
     }
 
-    public override void OnEndOfTurn(Entity user, Entity receiver)
+    public override void OnEffectApplied(Entity user, Entity receiver)
     {
         receiver.CalculateHealingTaken((int)(user.CalculateHealingDone() * healMod));
+    }
+
+    public override void OnEndOfTurn(Entity user, Entity receiver)
+    {
+        
     }
 
     public override int OnDamageTaken(int dmg)

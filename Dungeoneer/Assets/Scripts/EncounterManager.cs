@@ -133,10 +133,10 @@ public class EncounterManager : MonoBehaviour
         switch (inProgress.TargetType)
         {
             case Action.TargetingType.None:
-                inProgress.AppliedEffect.OnEndOfTurn(actor, actor);
+                inProgress.AppliedEffect.OnEffectApplied(actor, actor);
                 break;
             case Action.TargetingType.Single:
-                inProgress.AppliedEffect.OnEndOfTurn(actor, actor.target);
+                inProgress.AppliedEffect.OnEffectApplied(actor, actor.target);
                 break;
             case Action.TargetingType.All:
                 // TODO: apply to all enemies
@@ -144,14 +144,14 @@ public class EncounterManager : MonoBehaviour
                 {
                     for(int i = 0; i < enemies.Count; i++)
                     {
-                        inProgress.AppliedEffect.OnEndOfTurn(actor, enemies[i].GetComponent<Enemy>());
+                        inProgress.AppliedEffect.OnEffectApplied(actor, enemies[i].GetComponent<Enemy>());
                     }
                 }
                 else
                 {
                     foreach (GameObject e in allies)
                     {
-                        inProgress.AppliedEffect.OnEndOfTurn(actor, e.GetComponent<Entity>());
+                        inProgress.AppliedEffect.OnEffectApplied(actor, e.GetComponent<Entity>());
                     }
                 }
                 break;
