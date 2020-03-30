@@ -53,19 +53,24 @@ public class EncounterManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> hpBars;
 
+    [SerializeField] private List<GameObject> enemyHpBars;
+
+    [SerializeField] private List<GameObject> possibleEnemies;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        actionStack = new Stack<GameObject>();
+        /*actionStack = new Stack<GameObject>();
         UpdateUI();
-        Initiative();
+        Initiative();*/
+        Respawn();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void StartTurn(Entity ent)
@@ -157,6 +162,11 @@ public class EncounterManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+
+        if(enemies.Count <= 0)
+        {
+            Respawn();
         }
 
         actor.OnEndOfTurn();
@@ -286,10 +296,11 @@ public class EncounterManager : MonoBehaviour
             {
                 Destroy(enemies[i]);
                 enemies.Remove(enemies[i]);
+                enemyHpBars.Remove(enemyHpBars[i]);
                 return;
             }
             // Debug.Log(enemies[i].name);
-            GameObject enemy = GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
+            GameObject enemy = enemyHpBars[i];//GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
             Debug.Log(enemy);
             enemy.GetComponent<RectTransform>().localScale = new Vector3((float)e.hitpoints / e.maxHitpoints, 1, 1);
         }
@@ -302,5 +313,25 @@ public class EncounterManager : MonoBehaviour
             //update names if needed
             hpBars[i].transform.GetComponentInChildren<Text>().text = a.e_name;
         }
+    }
+
+    private void Respawn()
+    {
+        List<GameObject> newEnemies = new List<GameObject>();
+        List<GameObject> newEnemyBars = new List<GameObject>();
+        for(int i = 0; i < 4; i++)
+        {
+            int randNum = Random.Range(0, possibleEnemies.Count-1);
+            newEnemies.Add(GameObject.Instantiate(possibleEnemies[randNum], GameObject.Find("Canvas/Panel").transform));
+            newEnemies[i].GetComponent<RectTransform>().localPosition = enemyPositions[i];
+            newEnemyBars.Add(newEnemies[i].transform.GetChild(0).GetChild(0).gameObject);
+         
+        }
+        enemies = newEnemies;
+        enemyHpBars = newEnemyBars;
+
+        actionStack = new Stack<GameObject>();
+        UpdateUI();
+        Initiative();
     }
 }
