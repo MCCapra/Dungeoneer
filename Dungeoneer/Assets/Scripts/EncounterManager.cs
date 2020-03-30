@@ -163,20 +163,28 @@ public class EncounterManager : MonoBehaviour
             default:
                 break;
         }
+        
+        // update UI
+        UpdateUI();
 
-        if(enemies.Count <= 0)
+        if (enemies.Count <= 0)
         {
             Respawn();
         }
 
         actor.OnEndOfTurn();
-        // update UI
-        UpdateUI();
+
+
 
 
         if (actionStack.Count > 0)
         {
-            StartTurn(actionStack.Pop().GetComponent<Entity>());
+            GameObject next = actionStack.Pop();
+            
+            if(next)
+            {
+                StartTurn(next.GetComponent<Entity>());
+            }
         }
         else
         {

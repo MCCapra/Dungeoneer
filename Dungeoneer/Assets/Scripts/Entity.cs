@@ -47,10 +47,7 @@ public class Entity : MonoBehaviour
 
         dmg = ((2 * (attack + attMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
 
-        if(dmg <= 0)
-        {
-            dmg = 1;
-        }
+        if(dmg <= 0) dmg = 1;
 
         return dmg;
     }
@@ -62,10 +59,7 @@ public class Entity : MonoBehaviour
         //calculation here
         dmg = ((2 * (magic + magMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
 
-        if(dmg <= 0)
-        {
-            dmg = 1;
-        }
+        if(dmg <= 0) dmg = 1;
 
         return dmg;
     }
@@ -80,7 +74,7 @@ public class Entity : MonoBehaviour
     {
         dmg -= (defense + defMod);
 
-        if (dmg < 0) dmg = 0;
+        if (dmg <= 0) dmg = 1;
 
         hitpoints -= dmg;
 
@@ -94,7 +88,7 @@ public class Entity : MonoBehaviour
     {
         dmg -= (magDefense - mdefMod);
 
-        if (dmg < 0) dmg = 0;
+        if (dmg <= 0) dmg = 1;
 
         hitpoints -= dmg;
 
