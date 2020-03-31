@@ -61,9 +61,12 @@ public class EncounterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*actionStack = new Stack<GameObject>();
-        UpdateUI();
-        Initiative();*/
+        actionStack = new Stack<GameObject>();
+
+        foreach(GameObject a in allies)
+        {
+            a.GetComponent<Entity>().OnSpawn();
+        }
         Respawn();
     }
 
@@ -139,9 +142,11 @@ public class EncounterManager : MonoBehaviour
         {
             case Action.TargetingType.None:
                 inProgress.AppliedEffect.OnEffectApplied(actor, actor);
+                actor.ApplyEffect(inProgress.AppliedEffect);
                 break;
             case Action.TargetingType.Single:
                 inProgress.AppliedEffect.OnEffectApplied(actor, actor.target);
+                actor.target.ApplyEffect(inProgress.AppliedEffect);
                 break;
             case Action.TargetingType.All:
                 // TODO: apply to all enemies
@@ -150,20 +155,25 @@ public class EncounterManager : MonoBehaviour
                     for(int i = 0; i < enemies.Count; i++)
                     {
                         inProgress.AppliedEffect.OnEffectApplied(actor, enemies[i].GetComponent<Enemy>());
+                        enemies[i].GetComponent<Enemy>().ApplyEffect(inProgress.AppliedEffect);
                     }
                 }
                 else
                 {
                     foreach (GameObject e in allies)
                     {
-                        inProgress.AppliedEffect.OnEffectApplied(actor, e.GetComponent<Entity>());
+                        inProgress.AppliedEffect.OnEffectApplied(actor, e.GetComponent<Character>());
+                        e.GetComponent<Enemy>().ApplyEffect(inProgress.AppliedEffect);
                     }
                 }
                 break;
             default:
                 break;
         }
-        
+
+
+        actor.OnEndOfTurn();
+
         // update UI
         UpdateUI();
 
@@ -171,9 +181,6 @@ public class EncounterManager : MonoBehaviour
         {
             Respawn();
         }
-
-        actor.OnEndOfTurn();
-
 
 
 
@@ -309,7 +316,6 @@ public class EncounterManager : MonoBehaviour
             }
             // Debug.Log(enemies[i].name);
             GameObject enemy = enemyHpBars[i];//GameObject.Find("Canvas/Panel/" + enemies[i].name + "/HPbar/bar1");
-            Debug.Log(enemy);
             enemy.GetComponent<RectTransform>().localScale = new Vector3((float)e.hitpoints / e.maxHitpoints, 1, 1);
         }
 
@@ -332,13 +338,14 @@ public class EncounterManager : MonoBehaviour
             int randNum = Random.Range(0, possibleEnemies.Count-1);
             newEnemies.Add(GameObject.Instantiate(possibleEnemies[randNum], GameObject.Find("Canvas/Panel").transform));
             newEnemies[i].GetComponent<RectTransform>().localPosition = enemyPositions[i];
+            newEnemies[i].GetComponent<Entity>().OnSpawn();
             newEnemyBars.Add(newEnemies[i].transform.GetChild(0).GetChild(0).gameObject);
-         
+
         }
         enemies = newEnemies;
         enemyHpBars = newEnemyBars;
 
-        actionStack = new Stack<GameObject>();
+        //actionStack = new Stack<GameObject>();
         UpdateUI();
         Initiative();
     }

@@ -1,28 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName= "New Heal Effect 1", menuName = "New Effect/Heal")]
 
-public class HealEffect : Effect
+public class BlankEffect : Effect
 {
-    [Range(0, 2.0f)]
-    public float healMod;
+    //Meaybe thisworks
     public override void OnDamageDealt(Entity user, Entity receiver)
     {
+
     }
 
     public override void OnDamageTaken(Entity user, Entity receiver)
     {
-    }
 
-    public override void OnEffectApplied(Entity user, Entity receiver)
-    {
-        receiver.CalculateHealingTaken((int)(user.CalculateHealingDone() * healMod));
-    }
-
-    public override void OnEndOfTurn(Entity user, Entity receiver)
-    {
-        
     }
 
     public override int OnDamageTaken(int dmg)
@@ -30,7 +20,30 @@ public class HealEffect : Effect
         return dmg;
     }
 
+    public override void OnEffectApplied(Entity user, Entity receiver)
+    {
+
+    }
+
+    public override void OnEndOfTurn(Entity user, Entity receiver)
+    {
+
+    }
+
     public override void OnEndOfTurn(Entity effecty)
     {
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

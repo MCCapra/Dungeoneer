@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3797fda3dcf10a458cae1741fc39743, type: 3}
   m_Name: SimplePhysicalCritEffect
   m_EditorClassIdentifier: 
+  EffectLength: 1
   critChance: 0.1
   damageMod: 1
   damageType: 0
