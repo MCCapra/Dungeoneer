@@ -50,7 +50,6 @@ public class DamageEffect : Effect
                 break;
         }
 
-        Debug.Log(user.e_name + " hit " + receiver.e_name + " with " + System.Enum.GetName(typeof(DamageType), damageType) + " damage!");
 
         //user.OnDamageDealt();
         //receiver.OnDamageTaken();
@@ -63,6 +62,10 @@ public class DamageEffect : Effect
     }
 
     public override void OnEndOfTurn(Entity user, Entity receiver)
+    {
+    }
+
+    public override void OnEndOfTurn(Entity effecty)
     {
     }
 }

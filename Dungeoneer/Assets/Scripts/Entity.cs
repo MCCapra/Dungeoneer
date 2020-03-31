@@ -31,12 +31,13 @@ public class Entity : MonoBehaviour
     public int mdefMod;
     public int spdMod;
 
-    public int effectMaxLength; //Maximum length of ANY effect in the game.
+   
 
     public Action basicAttack;
     public Entity target;
 
-    public List<List<Effect>> StatusEffects;
+    private List<List<Effect>> StatusEffects;
+    public List<int> Test;
     public List<Action> skills; //Skills that the player will have access to.
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
@@ -67,6 +68,15 @@ public class Entity : MonoBehaviour
     public int CalculateHealingDone()
     {
         return (int)(magic + magMod) / 2;
+    }
+
+    public void CalculateTrueDamageTaken(int dmg)
+    {
+        hitpoints -= dmg;
+
+        if (hitpoints < 0) hitpoints = 0;
+
+        if (hitpoints > maxHitpoints) hitpoints = maxHitpoints;
     }
 
     //Damage taken from physical attacks
@@ -113,23 +123,57 @@ public class Entity : MonoBehaviour
     }
     public virtual void OnEndOfTurn()
     {
+        //call end of turn for each effect
+        foreach (List<Effect> list in StatusEffects)
+        {
+            for(int i = 0; i < list.Count; i++)
+            {
+                if (target)
+                {
+                    list[i].OnEndOfTurn(this, target);
+                }
 
+                list[i].OnEndOfTurn(this);
+            }
+        }
+
+        //tick down effects
+        for(int i = 0; i < StatusEffects.Count -1; i++)
+        {
+            StatusEffects[i] = StatusEffects[i + 1];
+        }
+
+        StatusEffects[StatusEffects.Count - 1] = new List<Effect> { ScriptableObject.CreateInstance<BlankEffect>() };
+        //calculate new modifiers
+
+        //clear out target
+        target = null;
     } 
     public virtual void TakeTurn() { }
 
     private void Start()
     {
-        maxHitpoints = hitpoints;
-        StatusEffects = new List<List<Effect>>();
-
-        for(int i = 0; i < effectMaxLength; i++)
-        {
-            StatusEffects.Add(new List<Effect>());
-        }
+        OnSpawn();
     }
 
     public void ApplyEffect(Effect eff)
     {
-        StatusEffects[eff.EffectLength].Add(eff);
+        int lengthInt = eff.EffectLength - 1;
+        Debug.Log(lengthInt);
+        StatusEffects[(eff.EffectLength -1)].Add(eff);
+    }
+
+    public void OnSpawn()
+    {
+        maxHitpoints = hitpoints;
+
+        StatusEffects = new List<List<Effect>>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            List<Effect> effList = new List<Effect>();
+            effList.Add(ScriptableObject.CreateInstance<BlankEffect>());
+            StatusEffects.Add(effList);
+        }
     }
 }
