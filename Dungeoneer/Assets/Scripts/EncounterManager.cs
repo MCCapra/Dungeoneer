@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 /*
  * Michael Capra
  * Encounter Manager: Manages combat for the dungeon crawl
@@ -80,15 +81,19 @@ public class EncounterManager : MonoBehaviour
     {
         actor = ent;
         inProgress = null;
-        ShowBaseMenu();
-        currentMenu = MenuState.Base;
-
-        baseMenu.transform.GetChild(5).GetComponent<Text>().text = ent.GetComponent<Entity>().e_name + "'s Turn";
-
-        if(actor is Enemy)
+        if (actor is Enemy)
         {
             DeclareAction(actor.basicAttack);
             ChooseTarget(Random.Range(0, allies.Count));
+        }
+        else
+        {
+            ShowBaseMenu();
+            currentMenu = MenuState.Base;
+
+            Debug.Log(ent.e_name + ": " + ent.hitpoints);
+
+            baseMenu.transform.GetChild(5).GetComponent<Text>().text = ent.GetComponent<Entity>().e_name + "'s Turn";
         }
     }
 
@@ -190,7 +195,10 @@ public class EncounterManager : MonoBehaviour
             
             if(next)
             {
-                StartTurn(next.GetComponent<Entity>());
+                if(next.GetComponent<Entity>().hitpoints > 0)
+                {
+                    StartTurn(next.GetComponent<Entity>());
+                }
             }
         }
         else
@@ -276,7 +284,7 @@ public class EncounterManager : MonoBehaviour
     private void Initiative()
     {
         List<Entity> holder = new List<Entity>();
-
+        actionStack.Clear();
 
         foreach (GameObject ally in allies)
         {
@@ -309,8 +317,10 @@ public class EncounterManager : MonoBehaviour
             Enemy e = enemies[i].GetComponent<Enemy>();
             if (e.hitpoints <= 0)
             {
-                Destroy(enemies[i]);
-                enemies.Remove(enemies[i]);
+                GameObject eN = enemies[i];
+               
+                Debug.Log(enemies.Remove(enemies[i]));
+                Destroy(eN);
                 enemyHpBars.Remove(enemyHpBars[i]);
                 return;
             }
@@ -333,6 +343,8 @@ public class EncounterManager : MonoBehaviour
     {
         List<GameObject> newEnemies = new List<GameObject>();
         List<GameObject> newEnemyBars = new List<GameObject>();
+
+        enemies.Clear();
         for(int i = 0; i < 4; i++)
         {
             int randNum = Random.Range(0, possibleEnemies.Count-1);
@@ -345,8 +357,9 @@ public class EncounterManager : MonoBehaviour
         enemies = newEnemies;
         enemyHpBars = newEnemyBars;
 
-        //actionStack = new Stack<GameObject>();
-        UpdateUI();
+        actionStack.Clear();
+
         Initiative();
+        UpdateUI();
     }
 }

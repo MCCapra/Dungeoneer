@@ -31,7 +31,10 @@ public class Entity : MonoBehaviour
     public int mdefMod;
     public int spdMod;
 
-   
+    public float dmgMod;
+    public float magDmgMod;
+    //conditions
+    public bool silenced;
 
     public Action basicAttack;
     public Entity target;
@@ -48,7 +51,9 @@ public class Entity : MonoBehaviour
 
         dmg = ((2 * (attack + attMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
 
-        if(dmg <= 0) dmg = 1;
+        dmg = (int)(dmg * dmgMod);
+
+        if (dmg <= 0) dmg = 1;
 
         return dmg;
     }
@@ -60,7 +65,9 @@ public class Entity : MonoBehaviour
         //calculation here
         dmg = ((2 * (magic + magMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
 
-        if(dmg <= 0) dmg = 1;
+        dmg = (int)(dmg * magDmgMod);
+
+        if (dmg <= 0) dmg = 1;
 
         return dmg;
     }
@@ -123,6 +130,9 @@ public class Entity : MonoBehaviour
     }
     public virtual void OnEndOfTurn()
     {
+        //reset all mods and conditions to default
+        silenced = false;
+        DefaultMods();
         //call end of turn for each effect
         foreach (List<Effect> list in StatusEffects)
         {
@@ -144,7 +154,6 @@ public class Entity : MonoBehaviour
         }
 
         StatusEffects[StatusEffects.Count - 1] = new List<Effect> { ScriptableObject.CreateInstance<BlankEffect>() };
-        //calculate new modifiers
 
         //clear out target
         target = null;
@@ -159,7 +168,6 @@ public class Entity : MonoBehaviour
     public void ApplyEffect(Effect eff)
     {
         int lengthInt = eff.EffectLength - 1;
-        Debug.Log(lengthInt);
         StatusEffects[(eff.EffectLength -1)].Add(eff);
     }
 
@@ -175,5 +183,17 @@ public class Entity : MonoBehaviour
             effList.Add(ScriptableObject.CreateInstance<BlankEffect>());
             StatusEffects.Add(effList);
         }
+    }
+
+    private void DefaultMods()
+    {
+        attMod = 0;
+        defMod = 0;
+        magMod = 0;
+        mdefMod = 0;
+        spdMod = 0;
+
+        dmgMod = 1.0f;
+        magDmgMod = 1.0f;
     }
 }

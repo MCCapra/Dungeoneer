@@ -147,11 +147,17 @@ MonoBehaviour:
   magMod: 0
   mdefMod: 0
   spdMod: 0
+  dmgMod: 1
+  magDmgMod: 1
+  silenced: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
   skills:
   - {fileID: 11400000, guid: d70641ba2e6edda40a26dc4519da3109, type: 2}
+  - {fileID: 11400000, guid: 05575e355f29f5342a4bca093d0bf8bd, type: 2}
+  - {fileID: 11400000, guid: bdda80563400aac41bfecb10686c8170, type: 2}
+  - {fileID: 11400000, guid: 5e4a030ffc3190d4da37bb09711812d2, type: 2}
   items: []
 --- !u!1 &4793808129967387369
 GameObject:

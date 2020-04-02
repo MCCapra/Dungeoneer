@@ -137,7 +137,7 @@ MonoBehaviour:
   magic: 5
   magDefense: 1
   speed: 10
-  e_name: testAlly2
+  e_name: Rogue
   tier: 0
   maxMana: 0
   mana: 0
@@ -146,6 +146,9 @@ MonoBehaviour:
   magMod: 0
   mdefMod: 0
   spdMod: 0
+  dmgMod: 1
+  magDmgMod: 1
+  silenced: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
   Test: 
