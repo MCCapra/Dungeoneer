@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
-  m_Name: Holy Blessing
+  m_Name: Bomb Toss
   m_EditorClassIdentifier: 
-  a_name: 
+  a_name: Bomb Toss
   description: 
-  effect: {fileID: 0}
-  targetingType: 0
+  effect: {fileID: 11400000, guid: dbabfe6fe251d9b48a864794c3bcb4f5, type: 2}
+  targetingType: 2
   targetEnemy: 0

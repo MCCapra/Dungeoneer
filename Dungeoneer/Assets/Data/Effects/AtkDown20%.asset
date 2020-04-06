@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
-  m_Name: Holy Blessing
+  m_Script: {fileID: 11500000, guid: 6dc4c5df362249b438f658911c38dbf7, type: 3}
+  m_Name: AtkDown20%
   m_EditorClassIdentifier: 
-  a_name: 
-  description: 
-  effect: {fileID: 0}
-  targetingType: 0
-  targetEnemy: 0
+  EffectLength: 2
+  silence: 0
+  changesStats: 0
+  attMod: -0.2
+  defMod: 0
+  mDefMod: 0
+  spdMod: 0
+  magMod: 0
+  dmgMod: 0
+  magDmgMod: 0
+  isFlat: 0

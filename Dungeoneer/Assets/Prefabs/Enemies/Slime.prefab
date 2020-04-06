@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2873068347079441073}
   - component: {fileID: 2873068347079441072}
   m_Layer: 5
-  m_Name: e1
+  m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,10 +147,15 @@ MonoBehaviour:
   magMod: 0
   mdefMod: 0
   spdMod: 0
-  effectMaxLength: 0
+  dmgMod: 0
+  magDmgMod: 0
+  silenced: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
-  skills: []
+  Test: 
+  skills:
+  - {fileID: 11400000, guid: de1e98d14b110ea4e810b2ba425ea3d3, type: 2}
+  - {fileID: 11400000, guid: a9bcd35b653af1941b024de0319c4899, type: 2}
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!1 &2873068347691361879

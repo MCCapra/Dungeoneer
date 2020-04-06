@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
-  m_Name: Holy Blessing
+  m_Name: War Cry
   m_EditorClassIdentifier: 
-  a_name: 
+  a_name: War Cry
   description: 
-  effect: {fileID: 0}
-  targetingType: 0
+  effect: {fileID: 11400000, guid: 2d8dd4a42dc186e4cb524a3f30e31ace, type: 2}
+  targetingType: 2
   targetEnemy: 0
