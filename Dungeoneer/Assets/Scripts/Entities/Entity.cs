@@ -33,8 +33,11 @@ public class Entity : MonoBehaviour
 
     public float dmgMod;
     public float magDmgMod;
+    public float dmgTknMod;
     //conditions
     public bool silenced;
+    public bool taunted;
+    public bool stunned;
 
     public Action basicAttack;
     public Entity target;
@@ -131,7 +134,6 @@ public class Entity : MonoBehaviour
     public virtual void OnEndOfTurn()
     {
         //reset all mods and conditions to default
-        silenced = false;
         DefaultMods();
         //call end of turn for each effect
         foreach (List<Effect> list in StatusEffects)
@@ -156,7 +158,7 @@ public class Entity : MonoBehaviour
         StatusEffects[StatusEffects.Count - 1] = new List<Effect> { ScriptableObject.CreateInstance<BlankEffect>() };
 
         //clear out target
-        target = null;
+        if(!taunted) target = null;
     } 
     public virtual void TakeTurn() { }
 
@@ -183,6 +185,8 @@ public class Entity : MonoBehaviour
             effList.Add(ScriptableObject.CreateInstance<BlankEffect>());
             StatusEffects.Add(effList);
         }
+
+        DefaultMods();
     }
 
     private void DefaultMods()
@@ -195,5 +199,9 @@ public class Entity : MonoBehaviour
 
         dmgMod = 1.0f;
         magDmgMod = 1.0f;
+
+        silenced = false;
+        taunted = false;
+        stunned = false;
     }
 }

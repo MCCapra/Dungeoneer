@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectLength: 2
   silence: 0
-  changesStats: 0
+  taunted: 0
+  stunned: 0
+  isNegative: 1
   attMod: -0.2
   defMod: 0
   mDefMod: 0

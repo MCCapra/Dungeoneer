@@ -225,6 +225,8 @@ MonoBehaviour:
   silenced: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
+  taunted: 0
   Test: 
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: b3b9c9216c0365f4fbc951d601a069c3, type: 2}
   items: []

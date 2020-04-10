@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: PoisonEffect3Turns
   m_EditorClassIdentifier: 
   EffectLength: 3
+  silence: 0
+  taunted: 0
+  stunned: 0
+  isNegative: 1

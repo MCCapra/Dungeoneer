@@ -12,7 +12,9 @@ public abstract class Effect : ScriptableObject
     [Range(0,5.0f, order = 1)]
     public int EffectLength; //Used for determining length of a lasting effect (damage doesn't care about this)
     public bool silence;
-    public bool changesStats;
+    public bool taunted;
+    public bool stunned;
+    public bool isNegative; //Bad effect
     public abstract void OnDamageTaken(Entity user, Entity receiver);
 
     public abstract int OnDamageTaken(int dmg);

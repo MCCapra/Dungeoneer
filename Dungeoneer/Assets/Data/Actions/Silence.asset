@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
   m_Name: Silence
   m_EditorClassIdentifier: 
-  a_name: 
-  description: 
-  effect: {fileID: 0}
-  targetingType: 0
-  targetEnemy: 0
+  a_name: Silence
+  description: Target can't use skills for 3 turns
+  effect: {fileID: 11400000, guid: b9c6c4f2b6f32834da040379e94ab1b1, type: 2}
+  targetingType: 1
+  targetEnemy: 1

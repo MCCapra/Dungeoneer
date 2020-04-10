@@ -9,19 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc4c5df362249b438f658911c38dbf7, type: 3}
-  m_Name: ReduceDefense15
+  m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
+  m_Name: Taunt
   m_EditorClassIdentifier: 
-  EffectLength: 2
-  silence: 0
-  taunted: 0
-  stunned: 0
-  isNegative: 1
-  attMod: 0
-  defMod: -0.3
-  mDefMod: 0
-  spdMod: 0
-  magMod: 0
-  dmgMod: 0
-  magDmgMod: 0
-  isFlat: 0
+  a_name: Taunt
+  description: Target enemy attacks you for the next 2 turns.
+  effect: {fileID: 11400000, guid: 47b3bfd9dd0a12a48b81a2dcfde8ca93, type: 2}
+  targetingType: 1
+  targetEnemy: 1

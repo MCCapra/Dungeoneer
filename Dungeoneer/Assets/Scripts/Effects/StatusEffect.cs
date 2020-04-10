@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Silence", menuName = "New Effect/Silence")]
-public class SilenceEffect : Effect
+[CreateAssetMenu(fileName = "New Status Effect 1", menuName = "New Effect/Status Effect")]
+public class StatusEffect : Effect
 {
     public override void OnDamageDealt(Entity user, Entity receiver)
     {
@@ -34,5 +34,7 @@ public class SilenceEffect : Effect
     public override void OnEndOfTurn(Entity effecty)
     {
         effecty.silenced = silence;
+        effecty.taunted = taunted;
+        effecty.stunned = stunned;
     }
 }

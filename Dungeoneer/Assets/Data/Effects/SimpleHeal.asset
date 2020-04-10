@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: SimpleHeal
   m_EditorClassIdentifier: 
   EffectLength: 1
+  silence: 0
+  taunted: 0
   healMod: 1
+  flatHeal: 0
+  isFlat: 0

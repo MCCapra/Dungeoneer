@@ -101,7 +101,7 @@ public class EncounterManager : MonoBehaviour
     {
         inProgress = a;
 
-        actor.target = null; // should be deprecated when a taunt status effect is added
+        if(!actor.taunted) actor.target = null; // should be deprecated when a taunt status effect is added
 
         switch (a.TargetType)
         {
@@ -121,11 +121,14 @@ public class EncounterManager : MonoBehaviour
     public void ChooseTarget(int index)
     {
         Entity t = null;
-        if (index < allies.Count)
+
+        t = actor.target;
+
+        if (index < allies.Count && actor.target == null)
         {
             t = allies[index].GetComponent<Character>();
         }
-        else if (index < allies.Count + enemies.Count)
+        else if (index < allies.Count + enemies.Count && actor.target == null)
         {
             t = enemies[index - allies.Count].GetComponent<Enemy>();
         }
@@ -134,6 +137,7 @@ public class EncounterManager : MonoBehaviour
             // explode
         }
 
+        //last check just in case
         if (t != null)
         {
             actor.target = t;
@@ -186,24 +190,22 @@ public class EncounterManager : MonoBehaviour
         {
             Respawn();
         }
-
-
-
-        if (actionStack.Count > 0)
+        
+        //Skip over stunned and dead people
+        while(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 || actionStack.Peek().GetComponent<Entity>().stunned)
         {
-            GameObject next = actionStack.Pop();
-            
-            if(next)
-            {
-                if(next.GetComponent<Entity>().hitpoints > 0)
-                {
-                    StartTurn(next.GetComponent<Entity>());
-                }
-            }
+            actionStack.Pop();
+        }
+
+
+        //Start next turn
+        if(actionStack.Count <= 0)
+        {
+            Initiative();
         }
         else
         {
-            Initiative();
+            StartTurn(actionStack.Pop().GetComponent<Entity>());
         }
     }
 

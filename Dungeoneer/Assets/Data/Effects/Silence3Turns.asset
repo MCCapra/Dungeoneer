@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5002da477ad2c4ba65508abe8fb784, type: 3}
+  m_Script: {fileID: 11500000, guid: ec37363b153ca84419cd9e10bd170699, type: 3}
   m_Name: Silence3Turns
   m_EditorClassIdentifier: 
   EffectLength: 3
   silence: 1
-  changesStats: 0
+  taunted: 0
+  stunned: 0
+  isNegative: 1
