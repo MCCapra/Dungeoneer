@@ -93,7 +93,7 @@ public class EncounterManager : MonoBehaviour
 
             Debug.Log(ent.e_name + ": " + ent.hitpoints);
 
-            baseMenu.transform.GetChild(5).GetComponent<Text>().text = ent.GetComponent<Entity>().e_name + "'s Turn";
+            baseMenu.transform.GetChild(3).GetComponent<Text>().text = ent.GetComponent<Entity>().e_name + "'s Turn";
         }
     }
 

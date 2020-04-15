@@ -22,7 +22,10 @@ public class StatusEffect : Effect
     public override void OnEffectApplied(Entity user, Entity receiver)
     {
         receiver.silenced = silence;
-
+        receiver.taunted = taunted;
+        receiver.stunned = stunned;
+        receiver.protect = protect;
+        receiver.bubbled = bubbled;
         //I know that this may seem redundant, but this ensures that the target becomes silenced.
     }
 
@@ -36,5 +39,6 @@ public class StatusEffect : Effect
         effecty.silenced = silence;
         effecty.taunted = taunted;
         effecty.stunned = stunned;
+        effecty.bubbled = bubbled;
     }
 }

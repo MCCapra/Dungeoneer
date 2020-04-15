@@ -71,5 +71,11 @@ public class StatChangeEffect : Effect
 
         receiver.dmgMod +=  dmgMod;
         receiver.magDmgMod += magDmgMod;
+
+        receiver.stunned = stunned;
+        receiver.taunted = taunted;
+        receiver.bubbled = bubbled;
+        receiver.protect = protect;
+        receiver.silenced = silenced;
     }
 }

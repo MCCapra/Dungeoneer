@@ -38,6 +38,8 @@ public class Entity : MonoBehaviour
     public bool silenced;
     public bool taunted;
     public bool stunned;
+    public bool protect;
+    public bool bubbled;
 
     public Action basicAttack;
     public Entity target;
@@ -82,6 +84,12 @@ public class Entity : MonoBehaviour
 
     public void CalculateTrueDamageTaken(int dmg)
     {
+        if(protect)
+        {
+            protect = false;
+            return;
+        }
+
         hitpoints -= dmg;
 
         if (hitpoints < 0) hitpoints = 0;
@@ -92,6 +100,12 @@ public class Entity : MonoBehaviour
     //Damage taken from physical attacks
     public void CalculateDamageTaken(int dmg)
     {
+        if (protect)
+        {
+            protect = false;
+            return;
+        }
+
         dmg -= (defense + defMod);
 
         if (dmg <= 0) dmg = 1;
@@ -106,6 +120,12 @@ public class Entity : MonoBehaviour
     //Damage taken from magic attacks
     public void CalculateMagicDamageTaken(int dmg)
     {
+        if (protect)
+        {
+            protect = false;
+            return;
+        }
+
         dmg -= (magDefense - mdefMod);
 
         if (dmg <= 0) dmg = 1;
@@ -203,5 +223,6 @@ public class Entity : MonoBehaviour
         silenced = false;
         taunted = false;
         stunned = false;
+        bubbled = false;
     }
 }

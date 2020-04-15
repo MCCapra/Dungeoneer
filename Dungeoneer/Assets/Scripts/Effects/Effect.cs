@@ -14,6 +14,9 @@ public abstract class Effect : ScriptableObject
     public bool silence;
     public bool taunted;
     public bool stunned;
+    public bool protect;
+    public bool bubbled;
+
     public bool isNegative; //Bad effect
     public abstract void OnDamageTaken(Entity user, Entity receiver);
 
