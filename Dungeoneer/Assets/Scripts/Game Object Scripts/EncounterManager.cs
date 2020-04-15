@@ -35,6 +35,9 @@ public class EncounterManager : MonoBehaviour
     [SerializeField] private GameObject baseMenu;
     [SerializeField] private GameObject targetMenu;
     [SerializeField] private GameObject skillMenu;
+    [SerializeField] private GameObject infoPanel;
+
+
     private enum MenuState { Base, Skills, Target, Other }
     private MenuState currentMenu = MenuState.Base;
 
@@ -211,6 +214,7 @@ public class EncounterManager : MonoBehaviour
 
     public void ShowBaseMenu()
     {
+        CloseInfo();
         targetMenu.SetActive(false);
         skillMenu.SetActive(false);
         baseMenu.SetActive(true);
@@ -219,6 +223,7 @@ public class EncounterManager : MonoBehaviour
     }
     public void ShowTargetMenu(bool targetEnemies)
     {
+        CloseInfo();
         targetMenu.SetActive(true);
         skillMenu.SetActive(false);
         baseMenu.SetActive(false);
@@ -259,6 +264,7 @@ public class EncounterManager : MonoBehaviour
 
     public void ShowSkillMenu()
     {
+        CloseInfo();
         targetMenu.SetActive(false);
         skillMenu.SetActive(true);
         baseMenu.SetActive(false);
@@ -281,6 +287,17 @@ public class EncounterManager : MonoBehaviour
                 button.SetAction(a);
             }
         }
+    }
+
+    public void ShowInfo()
+    {
+        infoPanel.SetActive(true);
+
+    }
+
+    public void CloseInfo()
+    {
+        infoPanel.SetActive(false);
     }
 
     private void Initiative()
