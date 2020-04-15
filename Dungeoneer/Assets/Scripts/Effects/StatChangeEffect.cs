@@ -76,6 +76,6 @@ public class StatChangeEffect : Effect
         receiver.taunted = taunted;
         receiver.bubbled = bubbled;
         receiver.protect = protect;
-        receiver.silenced = silenced;
+        receiver.silenced = silence;
     }
 }

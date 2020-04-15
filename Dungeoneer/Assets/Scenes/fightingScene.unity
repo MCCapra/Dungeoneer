@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 404655437}
   - component: {fileID: 404655436}
   - component: {fileID: 404655435}
+  - component: {fileID: 404655438}
   m_Layer: 5
   m_Name: Skill_Button
   m_TagString: Untagged
@@ -737,7 +738,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404655436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2008879173}
+        m_MethodName: ShowSkillMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &404655436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +786,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404655433}
   m_CullTransparentMesh: 0
+--- !u!114 &404655438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404655433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a6bb76f55a1f14bb709f4b8d896d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 0}
+  manager: {fileID: 2008879173}
 --- !u!1 &405765634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4379861526244544684, guid: 15fcd27d3a4175d45ad74e11b8732946,
@@ -2426,8 +2452,12 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
   silenced: 0
   taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
@@ -3053,8 +3083,12 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
   silenced: 0
   taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
   Test: 
@@ -5028,8 +5062,12 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
   silenced: 0
   taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
@@ -5783,8 +5821,12 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
   silenced: 0
   taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
