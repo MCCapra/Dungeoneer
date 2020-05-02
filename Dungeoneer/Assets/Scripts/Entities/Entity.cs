@@ -47,6 +47,9 @@ public class Entity : MonoBehaviour
     private List<List<Effect>> StatusEffects;
     public List<int> Test;
     public List<Action> skills; //Skills that the player will have access to.
+
+    public Sprite icon;
+
     //Calculation for the physical damage dealt by the entity
     public int CalculatePhysicalDamage()
     {

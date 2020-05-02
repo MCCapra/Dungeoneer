@@ -61,6 +61,10 @@ public class EncounterManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> possibleEnemies;
 
+    [SerializeField] private GameObject statusList;
+    [SerializeField] private GameObject statList;
+    [SerializeField] private GameObject charImg;
+    [SerializeField] private GameObject charName;
 
     // Start is called before the first frame update
     void Start()
@@ -292,6 +296,7 @@ public class EncounterManager : MonoBehaviour
     public void ShowInfo()
     {
         infoPanel.SetActive(true);
+        charName.GetComponent<Text>().text = actor.e_name;
 
     }
 
