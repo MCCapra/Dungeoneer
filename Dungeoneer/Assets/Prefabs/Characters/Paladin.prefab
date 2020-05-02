@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 2178200496051080868}
   - component: {fileID: 2178200496051080869}
   m_Layer: 5
-  m_Name: Warrior
+  m_Name: Paladin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,11 +222,20 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 1
   magDmgMod: 1
+  dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
+  taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
-  taunted: 0
   Test: 
   skills:
+  - {fileID: 11400000, guid: 4d773763af9676941b6e80d0a6e3e847, type: 2}
+  - {fileID: 11400000, guid: 93b05b9cde2035746b77f69ad76203d0, type: 2}
   - {fileID: 11400000, guid: b3b9c9216c0365f4fbc951d601a069c3, type: 2}
+  - {fileID: 11400000, guid: b3b9c9216c0365f4fbc951d601a069c3, type: 2}
+  icon: {fileID: 0}
   items: []

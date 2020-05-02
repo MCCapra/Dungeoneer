@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a64515819effaa94b9e8d3fc9c374ae8, type: 3}
-  m_Name: PoisonEffect3Turns
+  m_Name: Poison10%3Turns
   m_EditorClassIdentifier: 
   EffectLength: 3
   silence: 0
   taunted: 0
   stunned: 0
+  protect: 0
+  bubbled: 0
   isNegative: 1
+  poisonMod: 0.1

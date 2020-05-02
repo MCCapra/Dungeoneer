@@ -148,9 +148,20 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 1
   magDmgMod: 1
+  dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
+  taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
   Test: 
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: 4b220063d8bbebf47824560ea80eea2e, type: 2}
+  - {fileID: 11400000, guid: e3fcf9b7409ad0244849f765f0b4d5c9, type: 2}
+  - {fileID: 11400000, guid: 36b1f21f2cf44bc4d9f973dd309b3813, type: 2}
+  - {fileID: 11400000, guid: dc75e8a2bca92b441a6ba797b99dd336, type: 2}
+  icon: {fileID: 0}
   items: []

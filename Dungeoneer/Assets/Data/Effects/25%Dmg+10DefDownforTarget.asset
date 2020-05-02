@@ -9,23 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc4c5df362249b438f658911c38dbf7, type: 3}
-  m_Name: 25%Dodge3Turns
+  m_Script: {fileID: 11500000, guid: 21ed5047a493c60498ea6d92ab94c935, type: 3}
+  m_Name: 25%Dmg+10DefDownforTarget
   m_EditorClassIdentifier: 
-  EffectLength: 3
+  EffectLength: 1
   silence: 0
   taunted: 0
   stunned: 0
   protect: 0
   bubbled: 0
   isNegative: 0
-  attMod: 0
-  defMod: 0
-  mDefMod: 0
-  spdMod: 0
-  magMod: 0
-  dmgMod: 0
-  magDmgMod: 0
-  dmgTknMod: 0
-  dodgeChance: 0.25
-  isFlat: 0
+  critChance: 0
+  damageMod: 0.25
+  additionalEffectChance: 1
+  selfApplied: 0
+  appliedEffect: {fileID: 11400000, guid: a07dc7de7cf74cd4d847323787c19b8d, type: 2}
+  damageType: 0

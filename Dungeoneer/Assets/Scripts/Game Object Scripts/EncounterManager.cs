@@ -88,10 +88,24 @@ public class EncounterManager : MonoBehaviour
     {
         actor = ent;
         inProgress = null;
+
+        if(actor.silenced)
+        {
+            baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = false;
+        }
+
         if (actor is Enemy)
         {
-            DeclareAction(actor.basicAttack);
-            ChooseTarget(Random.Range(0, allies.Count));
+            if(actor.silenced)
+            {
+                DeclareAction(actor.basicAttack);
+                ChooseTarget(Random.Range(0, allies.Count));
+            }
+            else
+            {
+                DeclareAction(actor.gameObject.GetComponent<Enemy>().chooseAction());
+                ChooseTarget(Random.Range(0, allies.Count));
+            }
         }
         else
         {

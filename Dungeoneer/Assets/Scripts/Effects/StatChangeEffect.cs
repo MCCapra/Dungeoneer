@@ -26,7 +26,7 @@ public class StatChangeEffect : Effect
     public bool isFlat;
     public override void OnDamageDealt(Entity user, Entity receiver)
     {
-
+ 
     }
 
     public override void OnDamageTaken(Entity user, Entity receiver)
