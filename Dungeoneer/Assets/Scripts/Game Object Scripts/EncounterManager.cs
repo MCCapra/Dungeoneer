@@ -297,6 +297,9 @@ public class EncounterManager : MonoBehaviour
     {
         infoPanel.SetActive(true);
         charName.GetComponent<Text>().text = actor.e_name;
+        charImg.GetComponent<Image>().sprite = actor.icon;
+        statList.GetComponent<Text>().text = "Stats HP: " + actor.hitpoints + "/" + actor.maxHitpoints + "ATK: " + actor.attack +  "DEF: " + actor.defense + "M.ATK: " + actor.magic + "M.DEF: " + actor.magDefense + "SPD: " + actor.speed;
+
 
     }
 

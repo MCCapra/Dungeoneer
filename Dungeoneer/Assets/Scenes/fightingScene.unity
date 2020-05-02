@@ -669,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &205911572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2911,6 +2911,7 @@ MonoBehaviour:
   target: {fileID: 0}
   Test: 
   skills: []
+  icon: {fileID: 0}
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!1 &971062419
@@ -3543,6 +3544,7 @@ MonoBehaviour:
   target: {fileID: 0}
   Test: 
   skills: []
+  icon: {fileID: 0}
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!1 &1067975474
@@ -4764,6 +4766,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0c9caa48a1c815b44be1e107b9287d60,
         type: 2}
+    - target: {fileID: 4379861526244544679, guid: 15fcd27d3a4175d45ad74e11b8732946,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300112, guid: e48ddf4fb7304ce4ab48711eb6617a57,
+        type: 3}
     - target: {fileID: 4379861526244544682, guid: 15fcd27d3a4175d45ad74e11b8732946,
         type: 3}
       propertyPath: m_PreserveAspect
@@ -5622,6 +5630,7 @@ MonoBehaviour:
   target: {fileID: 0}
   Test: 
   skills: []
+  icon: {fileID: 0}
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!1 &1762566182
@@ -6458,6 +6467,7 @@ MonoBehaviour:
   target: {fileID: 0}
   Test: 
   skills: []
+  icon: {fileID: 0}
   gold_reward: 0
   itemDrop: {fileID: 0}
 --- !u!1 &1954270967
@@ -7555,6 +7565,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d,
         type: 2}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300002, guid: e48ddf4fb7304ce4ab48711eb6617a57,
+        type: 3}
     - target: {fileID: 2178200496051080870, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
         type: 3}
       propertyPath: m_PreserveAspect
@@ -7705,6 +7721,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cd242bdb328e3f1479302d39835ee809,
         type: 2}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300100, guid: e48ddf4fb7304ce4ab48711eb6617a57,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ea041417f6d62d4181532e5451674b0, type: 3}
 --- !u!1001 &6740433196063893312
@@ -7834,5 +7856,11 @@ PrefabInstance:
       propertyPath: m_UseSpriteMesh
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300104, guid: e48ddf4fb7304ce4ab48711eb6617a57,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae974f1e27103f4b92db02979646d81, type: 3}
