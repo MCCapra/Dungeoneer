@@ -34,6 +34,8 @@ public class Entity : MonoBehaviour
     public float dmgMod;
     public float magDmgMod;
     public float dmgTknMod;
+
+    public float dodgeChance;
     //conditions
     public bool silenced;
     public bool taunted;
@@ -44,7 +46,7 @@ public class Entity : MonoBehaviour
     public Action basicAttack;
     public Entity target;
 
-    private List<List<Effect>> StatusEffects;
+    public List<List<Effect>> StatusEffects;
     public List<int> Test;
     public List<Action> skills; //Skills that the player will have access to.
 
@@ -111,7 +113,16 @@ public class Entity : MonoBehaviour
 
         dmg -= (defense + defMod);
 
+        dmg = (int)(dmg * dmgTknMod);
+
         if (dmg <= 0) dmg = 1;
+
+        float dodge = Random.Range(0, 1);
+
+        if(dodge <= dodgeChance)
+        {
+            dmg = 0;
+        }
 
         hitpoints -= dmg;
 
@@ -131,7 +142,16 @@ public class Entity : MonoBehaviour
 
         dmg -= (magDefense - mdefMod);
 
+        dmg = (int)(dmg *dmgTknMod);
+
         if (dmg <= 0) dmg = 1;
+
+        float dodge = Random.Range(0, 1);
+
+        if (dodge <= dodgeChance)
+        {
+            dmg = 0;
+        }
 
         hitpoints -= dmg;
 
@@ -219,9 +239,11 @@ public class Entity : MonoBehaviour
         magMod = 0;
         mdefMod = 0;
         spdMod = 0;
+        dodgeChance = 0;
 
         dmgMod = 1.0f;
         magDmgMod = 1.0f;
+        dmgTknMod = 1.0f;
 
         silenced = false;
         taunted = false;

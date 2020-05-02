@@ -18,6 +18,10 @@ public class StatChangeEffect : Effect
     public float dmgMod;
     [Range(-1, 1)]
     public float magDmgMod;
+    [Range(-1, 1)]
+    public float dmgTknMod;
+    [Range(0, 1)]
+    public float dodgeChance;
 
     public bool isFlat;
     public override void OnDamageDealt(Entity user, Entity receiver)
@@ -71,6 +75,8 @@ public class StatChangeEffect : Effect
 
         receiver.dmgMod +=  dmgMod;
         receiver.magDmgMod += magDmgMod;
+        receiver.dmgTknMod += dmgTknMod;
+        receiver.dodgeChance += dodgeChance;
 
         receiver.stunned = stunned;
         receiver.taunted = taunted;

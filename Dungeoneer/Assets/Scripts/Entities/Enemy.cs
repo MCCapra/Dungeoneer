@@ -11,10 +11,14 @@ public class Enemy : Entity
      */
 
     public int gold_reward; //Gold rewarded on death
-    public GameObject itemDrop; //Each enemy has a chance to drop an item on death, this will be randomized.
     void Start()
     {
 
+    }
+
+    public int GiveGold()
+    {
+        return gold_reward;
     }
 
     // Update is called once per frame
