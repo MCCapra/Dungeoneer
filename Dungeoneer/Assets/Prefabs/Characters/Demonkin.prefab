@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6740433196394018759}
   - component: {fileID: 6740433196394018760}
   m_Layer: 5
-  m_Name: Thaumaturge
+  m_Name: Demonkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,14 +130,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 25
-  maxHitpoints: 25
-  attack: 10
-  defense: 25
-  magic: 35
+  hitpoints: 30
+  maxHitpoints: 30
+  attack: 5
+  defense: 10
+  magic: 50
   magDefense: 30
   speed: 25
-  e_name: Thaumaturge
+  e_name: Demon Kin
   tier: 0
   maxMana: 0
   mana: 0
@@ -159,9 +159,9 @@ MonoBehaviour:
   target: {fileID: 0}
   Test: 
   skills:
-  - {fileID: 11400000, guid: 4b220063d8bbebf47824560ea80eea2e, type: 2}
-  - {fileID: 11400000, guid: e3fcf9b7409ad0244849f765f0b4d5c9, type: 2}
-  - {fileID: 11400000, guid: 36b1f21f2cf44bc4d9f973dd309b3813, type: 2}
-  - {fileID: 11400000, guid: dc75e8a2bca92b441a6ba797b99dd336, type: 2}
+  - {fileID: 11400000, guid: ac261c14898d8284183fedc9d43a3c40, type: 2}
+  - {fileID: 11400000, guid: 64f2e595688b67c43962297bae861907, type: 2}
+  - {fileID: 11400000, guid: ca8fe1ed41c7cff44a369fd9d0a64d9a, type: 2}
+  - {fileID: 11400000, guid: 91bfdc7894866474ea7b3f29c1bc0d5c, type: 2}
   icon: {fileID: 0}
   items: []

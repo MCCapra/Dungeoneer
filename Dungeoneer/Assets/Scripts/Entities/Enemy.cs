@@ -11,6 +11,7 @@ public class Enemy : Entity
      */
 
     public int gold_reward; //Gold rewarded on death
+    public Action enemySkill;
     void Start()
     {
 
@@ -19,6 +20,18 @@ public class Enemy : Entity
     public int GiveGold()
     {
         return gold_reward;
+    }
+
+    public Action chooseAction()
+    {
+        if(Random.Range(0,1) > .5)
+        {
+            return basicAttack;
+        }
+        else
+        {
+            return enemySkill;
+        }
     }
 
     // Update is called once per frame

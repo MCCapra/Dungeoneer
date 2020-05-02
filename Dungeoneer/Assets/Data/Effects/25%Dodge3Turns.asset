@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc4c5df362249b438f658911c38dbf7, type: 3}
   m_Name: 25%Dodge3Turns
   m_EditorClassIdentifier: 
-  EffectLength: 0
+  EffectLength: 3
   silence: 0
   taunted: 0
   stunned: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
   dmgMod: 0
   magDmgMod: 0
   dmgTknMod: 0
-  dodgeChance: 0
+  dodgeChance: 0.25
   isFlat: 0

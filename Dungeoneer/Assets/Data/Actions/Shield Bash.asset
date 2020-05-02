@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
-  m_Name: Sharpen Blades
+  m_Name: Shield Bash
   m_EditorClassIdentifier: 
-  a_name: Sharpen Blades
-  description: Buff your damage by 30% for 1 turn.
-  effect: {fileID: 11400000, guid: 43ff0e44729c4e94bbba6cf67ed54636, type: 2}
-  targetingType: 0
-  targetEnemy: 0
+  a_name: Shield Bash
+  description: Deal 50% damage to enemy, take 50% less damage till your next turn.
+  effect: {fileID: 11400000, guid: 4064d3c04afdaa64396e93936567b992, type: 2}
+  targetingType: 1
+  targetEnemy: 1

@@ -66,6 +66,10 @@ public class EncounterManager : MonoBehaviour
     [SerializeField] private GameObject charImg;
     [SerializeField] private GameObject charName;
 
+    [SerializeField] private GameObject skillInfoTxt;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,10 +92,24 @@ public class EncounterManager : MonoBehaviour
     {
         actor = ent;
         inProgress = null;
+
+        if(actor.silenced)
+        {
+            baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = false;
+        }
+
         if (actor is Enemy)
         {
-            DeclareAction(actor.basicAttack);
-            ChooseTarget(Random.Range(0, allies.Count));
+            if(actor.silenced)
+            {
+                DeclareAction(actor.basicAttack);
+                ChooseTarget(Random.Range(0, allies.Count));
+            }
+            else
+            {
+                DeclareAction(actor.gameObject.GetComponent<Enemy>().chooseAction());
+                ChooseTarget(Random.Range(0, allies.Count));
+            }
         }
         else
         {
@@ -193,6 +211,8 @@ public class EncounterManager : MonoBehaviour
         // update UI
         UpdateUI();
 
+        baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = true;
+
         if (enemies.Count <= 0)
         {
             Respawn();
@@ -279,6 +299,8 @@ public class EncounterManager : MonoBehaviour
         baseMenu.SetActive(false);
         currentMenu = MenuState.Skills;
 
+        skillInfoTxt.GetComponent<Text>().text = "";
+
         for(int i = 0; i < skillMenu.transform.childCount - 3; i++)
         {
             if(i >= actor.skills.Count)
@@ -303,9 +325,16 @@ public class EncounterManager : MonoBehaviour
         infoPanel.SetActive(true);
         charName.GetComponent<Text>().text = actor.e_name;
         charImg.GetComponent<Image>().sprite = actor.icon;
-        statList.GetComponent<Text>().text = "Stats HP: " + actor.hitpoints + "/" + actor.maxHitpoints + "ATK: " + actor.attack +  "DEF: " + actor.defense + "M.ATK: " + actor.magic + "M.DEF: " + actor.magDefense + "SPD: " + actor.speed;
-
-
+        statList.GetComponent<Text>().text = "Stats\nHP: " + actor.hitpoints + "/" + actor.maxHitpoints + "\nATK: " + actor.attack + "\nDEF: " + actor.defense + "\nM.ATK: " + actor.magic + "\nM.DEF: " + actor.magDefense + "\nSPD: " + actor.speed;
+        statusList.GetComponent<Text>().text = "";
+        /*for (int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < actor.StatusList[j].Count; j++)
+            {
+                statusList.GetComponent<Text>().text = actor.StatusList[i][j];
+            }
+            
+        }*/
     }
 
     public void CloseInfo()

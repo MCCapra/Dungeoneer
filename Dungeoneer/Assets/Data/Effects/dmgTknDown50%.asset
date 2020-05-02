@@ -9,18 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a64515819effaa94b9e8d3fc9c374ae8, type: 3}
-  m_Name: Poison10%2Turns
+  m_Script: {fileID: 11500000, guid: 6dc4c5df362249b438f658911c38dbf7, type: 3}
+  m_Name: dmgTknDown50%
   m_EditorClassIdentifier: 
-  EffectLength: 0
+  EffectLength: 1
   silence: 0
   taunted: 0
   stunned: 0
   protect: 0
   bubbled: 0
   isNegative: 0
-<<<<<<< HEAD
-  poisonMod: 0
-=======
-  poisonMod: 0.1
->>>>>>> ac5d3f853b9943e6689f096dc13df992f17a6e93
+  attMod: 0
+  defMod: 0
+  mDefMod: 0
+  spdMod: 0
+  magMod: 0
+  dmgMod: 0
+  magDmgMod: 0
+  dmgTknMod: 0.5
+  dodgeChance: 0
+  isFlat: 0

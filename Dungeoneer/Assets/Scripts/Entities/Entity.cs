@@ -36,6 +36,7 @@ public class Entity : MonoBehaviour
     public float dmgTknMod;
 
     public float dodgeChance;
+    
     //conditions
     public bool silenced;
     public bool taunted;

@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 190466824}
   - component: {fileID: 190466823}
   - component: {fileID: 190466826}
+  - component: {fileID: 190466827}
   m_Layer: 5
   m_Name: skill4_Button
   m_TagString: Untagged
@@ -496,6 +497,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 1041345290}
+--- !u!114 &190466827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190466821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094706730}
+          m_MethodName: UpdateSkillInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &200378614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 0}
 --- !u!1 &405765634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4379861526244544684, guid: 15fcd27d3a4175d45ad74e11b8732946,
@@ -2902,6 +2933,7 @@ MonoBehaviour:
   dmgMod: 0
   magDmgMod: 0
   dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
   taunted: 0
   stunned: 0
@@ -2913,7 +2945,6 @@ MonoBehaviour:
   skills: []
   icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
 --- !u!1 &971062419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 0}
 --- !u!1 &981054509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,7 +3352,7 @@ GameObject:
   - component: {fileID: 1041345293}
   - component: {fileID: 1041345292}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SkillText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3535,6 +3567,7 @@ MonoBehaviour:
   dmgMod: 0
   magDmgMod: 0
   dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
   taunted: 0
   stunned: 0
@@ -3546,7 +3579,6 @@ MonoBehaviour:
   skills: []
   icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
 --- !u!1 &1067975474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,6 +4630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 0}
 --- !u!1 &1319222214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5621,6 +5654,7 @@ MonoBehaviour:
   dmgMod: 0
   magDmgMod: 0
   dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
   taunted: 0
   stunned: 0
@@ -5632,7 +5666,6 @@ MonoBehaviour:
   skills: []
   icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
 --- !u!1 &1762566182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6458,6 +6491,7 @@ MonoBehaviour:
   dmgMod: 0
   magDmgMod: 0
   dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
   taunted: 0
   stunned: 0
@@ -6469,7 +6503,6 @@ MonoBehaviour:
   skills: []
   icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
 --- !u!1 &1954270967
 GameObject:
   m_ObjectHideFlags: 0
@@ -6560,6 +6593,8 @@ GameObject:
   - component: {fileID: 1965421228}
   - component: {fileID: 1965421227}
   - component: {fileID: 1965421230}
+  - component: {fileID: 1965421232}
+  - component: {fileID: 1965421231}
   m_Layer: 5
   m_Name: skill2_Button
   m_TagString: Untagged
@@ -6691,6 +6726,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 1041345290}
+--- !u!114 &1965421231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965421225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094706730}
+          m_MethodName: UpdateSkillInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1965421232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965421225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1968835500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6925,7 +7002,7 @@ MonoBehaviour:
   - {fileID: 3739081317417649365, guid: d4093f57873dffd4fa17f285a1817fa0, type: 3}
   statusList: {fileID: 156219918}
   statList: {fileID: 476063869}
-  charImg: {fileID: 1129980419}
+  charImg: {fileID: 688019728}
   charName: {fileID: 1844195012}
 --- !u!1 &2052328159
 GameObject:
@@ -6940,6 +7017,7 @@ GameObject:
   - component: {fileID: 2052328162}
   - component: {fileID: 2052328161}
   - component: {fileID: 2052328164}
+  - component: {fileID: 2052328165}
   m_Layer: 5
   m_Name: skill3_Button
   m_TagString: Untagged
@@ -7071,6 +7149,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 1041345290}
+--- !u!114 &2052328165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052328159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094706730}
+          m_MethodName: UpdateSkillInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2093401228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7158,6 +7265,8 @@ GameObject:
   - component: {fileID: 2094706728}
   - component: {fileID: 2094706727}
   - component: {fileID: 2094706730}
+  - component: {fileID: 2094706732}
+  - component: {fileID: 2094706731}
   m_Layer: 5
   m_Name: skill1_Button
   m_TagString: Untagged
@@ -7289,6 +7398,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   manager: {fileID: 2008879173}
+  skillInfo: {fileID: 1041345290}
+--- !u!114 &2094706731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094706725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &2094706732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094706725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094706730}
+          m_MethodName: UpdateSkillInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2098560386
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,7 +7457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2098560387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7571,6 +7722,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300002, guid: e48ddf4fb7304ce4ab48711eb6617a57,
         type: 3}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: hitpoints
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: maxHitpoints
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: attack
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: defense
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: magic
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: magDefense
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178200496051080869, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
+        type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2178200496051080870, guid: 8ddd8f0b043dbde4eabc8a622d59884a,
         type: 3}
       propertyPath: m_PreserveAspect
@@ -7727,6 +7913,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300100, guid: e48ddf4fb7304ce4ab48711eb6617a57,
         type: 3}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: hitpoints
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: maxHitpoints
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: attack
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: defense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: magic
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: magDefense
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276093259731539869, guid: 0ea041417f6d62d4181532e5451674b0,
+        type: 3}
+      propertyPath: speed
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ea041417f6d62d4181532e5451674b0, type: 3}
 --- !u!1001 &6740433196063893312
@@ -7862,5 +8083,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300104, guid: e48ddf4fb7304ce4ab48711eb6617a57,
         type: 3}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: hitpoints
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: maxHitpoints
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: attack
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: defense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: magic
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: magDefense
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740433196394018760, guid: cae974f1e27103f4b92db02979646d81,
+        type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae974f1e27103f4b92db02979646d81, type: 3}
