@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PoisonEffect : Effect
 {
+    [Range(0, 1)]
+    public float poisonMod;
     public override void OnDamageDealt(Entity user, Entity receiver)
     {
     }
@@ -29,7 +31,7 @@ public class PoisonEffect : Effect
 
     public override void OnEndOfTurn(Entity effecty)
     {
-        int dmg = (int)(effecty.maxHitpoints / 16);
+        int dmg = (int)(effecty.maxHitpoints * poisonMod);
 
         if(dmg <= 0)
         {

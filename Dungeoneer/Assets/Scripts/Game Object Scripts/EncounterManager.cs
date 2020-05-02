@@ -201,6 +201,11 @@ public class EncounterManager : MonoBehaviour
         //Skip over stunned and dead people
         while(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 || actionStack.Peek().GetComponent<Entity>().stunned)
         {
+            if(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 && actionStack.Peek().GetComponent<Entity>() is Enemy)
+            {
+                GameObject.Find("Player Profile").GetComponent<PlayerProfile>().gold += actionStack.Peek().GetComponent<Enemy>().GiveGold();
+            }
+
             actionStack.Pop();
         }
 
