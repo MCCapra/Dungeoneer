@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 /*
  * Michael Capra
  * Encounter Manager: Manages combat for the dungeon crawl
@@ -67,6 +68,7 @@ public class EncounterManager : MonoBehaviour
     [SerializeField] private GameObject charName;
 
     [SerializeField] private GameObject skillInfoTxt;
+    [SerializeField] private GameObject settingsMenu;
 
 
 
@@ -213,6 +215,11 @@ public class EncounterManager : MonoBehaviour
 
         baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = true;
 
+        if (allies.Count <= 0)
+        {
+            returnToShop();
+        }
+
         if (enemies.Count <= 0)
         {
             Respawn();
@@ -244,6 +251,7 @@ public class EncounterManager : MonoBehaviour
     public void ShowBaseMenu()
     {
         CloseInfo();
+        closeSettings();
         targetMenu.SetActive(false);
         skillMenu.SetActive(false);
         baseMenu.SetActive(true);
@@ -253,6 +261,7 @@ public class EncounterManager : MonoBehaviour
     public void ShowTargetMenu(bool targetEnemies)
     {
         CloseInfo();
+        closeSettings();
         targetMenu.SetActive(true);
         skillMenu.SetActive(false);
         baseMenu.SetActive(false);
@@ -294,6 +303,7 @@ public class EncounterManager : MonoBehaviour
     public void ShowSkillMenu()
     {
         CloseInfo();
+        closeSettings();
         targetMenu.SetActive(false);
         skillMenu.SetActive(true);
         baseMenu.SetActive(false);
@@ -323,6 +333,7 @@ public class EncounterManager : MonoBehaviour
     public void ShowInfo()
     {
         infoPanel.SetActive(true);
+        closeSettings();
         charName.GetComponent<Text>().text = actor.e_name;
         charImg.GetComponent<Image>().sprite = actor.icon;
         statList.GetComponent<Text>().text = "Stats\nHP: " + actor.hitpoints + "/" + actor.maxHitpoints + "\nATK: " + actor.attack + "\nDEF: " + actor.defense + "\nM.ATK: " + actor.magic + "\nM.DEF: " + actor.magDefense + "\nSPD: " + actor.speed;
@@ -422,5 +433,20 @@ public class EncounterManager : MonoBehaviour
 
         Initiative();
         UpdateUI();
+    }
+
+    public void returnToShop()
+    {
+        SceneManager.LoadScene("shopScene");
+    }
+
+    public void showSettings()
+    {
+        CloseInfo();
+        settingsMenu.SetActive(true);
+    }
+    public void closeSettings()
+    {
+        settingsMenu.SetActive(false);
     }
 }
