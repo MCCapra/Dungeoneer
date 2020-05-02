@@ -130,13 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 100
-  maxHitpoints: 100
-  attack: 1
-  defense: 1
-  magic: 5
-  magDefense: 1
-  speed: 10
+  hitpoints: 25
+  maxHitpoints: 25
+  attack: 35
+  defense: 25
+  magic: 10
+  magDefense: 15
+  speed: 40
   e_name: Rogue
   tier: 0
   maxMana: 0

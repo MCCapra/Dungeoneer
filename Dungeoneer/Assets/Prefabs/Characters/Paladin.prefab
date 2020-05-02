@@ -204,14 +204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 100
-  maxHitpoints: 100
-  attack: 1
-  defense: 1
-  magic: 5
-  magDefense: 1
-  speed: 10
-  e_name: Warrior
+  hitpoints: 40
+  maxHitpoints: 40
+  attack: 20
+  defense: 25
+  magic: 20
+  magDefense: 25
+  speed: 20
+  e_name: Paladin
   tier: 0
   maxMana: 0
   mana: 0

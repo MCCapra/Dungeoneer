@@ -204,13 +204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19e18097db762a469765a963b4ddb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 100
-  maxHitpoints: 100
-  attack: 1
-  defense: 1
-  magic: 5
-  magDefense: 1
-  speed: 10
+  hitpoints: 45
+  maxHitpoints: 45
+  attack: 30
+  defense: 30
+  magic: 10
+  magDefense: 20
+  speed: 15
   e_name: Warrior
   tier: 0
   maxMana: 0
