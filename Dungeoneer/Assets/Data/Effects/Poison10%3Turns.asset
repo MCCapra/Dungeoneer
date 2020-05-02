@@ -19,8 +19,4 @@ MonoBehaviour:
   protect: 0
   bubbled: 0
   isNegative: 1
-<<<<<<< HEAD
-  poisonMod: 0
-=======
   poisonMod: 0.1
->>>>>>> ac5d3f853b9943e6689f096dc13df992f17a6e93
