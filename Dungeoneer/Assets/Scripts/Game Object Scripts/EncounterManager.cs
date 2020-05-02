@@ -207,6 +207,8 @@ public class EncounterManager : MonoBehaviour
         // update UI
         UpdateUI();
 
+        baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = true;
+
         if (enemies.Count <= 0)
         {
             Respawn();
