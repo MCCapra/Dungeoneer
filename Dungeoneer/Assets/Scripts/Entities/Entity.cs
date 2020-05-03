@@ -60,7 +60,7 @@ public class Entity : MonoBehaviour
 
         //calculation here
 
-        dmg = ((2 * (attack + attMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
+        dmg = ((2 * (attack + attMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2));
 
         dmg = (int)(dmg * dmgMod);
 
@@ -74,7 +74,7 @@ public class Entity : MonoBehaviour
         int dmg = 0;
 
         //calculation here
-        dmg = ((2 * (magic + magMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2)) * 2;
+        dmg = ((2 * (magic + magMod)) - (((defense + defMod) + (magDefense + mdefMod)) / 2));
 
         dmg = (int)(dmg * magDmgMod);
 
@@ -120,7 +120,7 @@ public class Entity : MonoBehaviour
 
         float dodge = Random.Range(0, 1);
 
-        if(dodge <= dodgeChance)
+        if(dodge < dodgeChance)
         {
             dmg = 0;
         }
@@ -141,7 +141,7 @@ public class Entity : MonoBehaviour
             return;
         }
 
-        dmg -= (magDefense - mdefMod);
+        dmg -= (magDefense + mdefMod);
 
         dmg = (int)(dmg *dmgTknMod);
 
@@ -149,7 +149,7 @@ public class Entity : MonoBehaviour
 
         float dodge = Random.Range(0, 1);
 
-        if (dodge <= dodgeChance)
+        if (dodge < dodgeChance)
         {
             dmg = 0;
         }

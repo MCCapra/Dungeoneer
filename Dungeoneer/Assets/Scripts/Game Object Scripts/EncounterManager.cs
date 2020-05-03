@@ -235,13 +235,17 @@ public class EncounterManager : MonoBehaviour
 
         baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = true;
 
-        //Skip over stunned and dead people
-        while(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 || actionStack.Peek().GetComponent<Entity>().stunned && actionStack.Count > 0)
+        for(int i = 0; i < actionStack.Count; i++)
         {
-            Debug.Log(actionStack.Peek().GetComponent<Entity>().e_name);
-            actionStack.Pop();
+            if (actionStack.Peek().GetComponent<Entity>().stunned)
+            {
+                actionStack.Pop();
+            }
+            else
+            {
+                break;
+            }
         }
-
 
         if (allies.Count <= 0)
         {
