@@ -163,5 +163,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35dfdbae07f435a438c9eb03193d6433, type: 2}
   - {fileID: 11400000, guid: cb87f59c40c6b2b47897fd70f4275c70, type: 2}
   - {fileID: 11400000, guid: cd242bdb328e3f1479302d39835ee809, type: 2}
-  icon: {fileID: 0}
+  icon: {fileID: 21300100, guid: e48ddf4fb7304ce4ab48711eb6617a57, type: 3}
   items: []
