@@ -46,6 +46,10 @@ public class cpManager : MonoBehaviour
     {
         changePanel.SetActive(true);
     }
+    public void closeChange()
+    {
+        changePanel.SetActive(false);
+    }
 
     public void SetIndex0()
     {
