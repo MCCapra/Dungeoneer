@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ed5047a493c60498ea6d92ab94c935, type: 3}
   m_Name: 110DamageandHeal
   m_EditorClassIdentifier: 
-  EffectLength: 0
+  EffectLength: 1
   silence: 0
   taunted: 0
   stunned: 0
+  protect: 0
+  bubbled: 0
   isNegative: 0
   critChance: 0
   damageMod: 1.1

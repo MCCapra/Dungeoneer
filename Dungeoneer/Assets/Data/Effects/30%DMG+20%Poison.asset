@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ed5047a493c60498ea6d92ab94c935, type: 3}
   m_Name: 30%DMG+20%Poison
   m_EditorClassIdentifier: 
-  EffectLength: 0
+  EffectLength: 1
   silence: 0
   taunted: 0
   stunned: 0
@@ -20,8 +20,8 @@ MonoBehaviour:
   bubbled: 0
   isNegative: 0
   critChance: 0
-  damageMod: 0
-  additionalEffectChance: 0
+  damageMod: 0.3
+  additionalEffectChance: 1
   selfApplied: 0
-  appliedEffect: {fileID: 0}
+  appliedEffect: {fileID: 11400000, guid: 91bab95fb7a5d1e45915d318c90fecf3, type: 2}
   damageType: 0

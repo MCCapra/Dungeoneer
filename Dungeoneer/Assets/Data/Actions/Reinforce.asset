@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   a_name: Reinforce
   description: Gain 10 Mag Def and 10 Def for 1 turn.
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: ae69490f04f5ad449840eba9978f3e37, type: 2}
   targetingType: 0
   targetEnemy: 0
