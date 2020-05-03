@@ -303,7 +303,7 @@ MonoBehaviour:
   stunned: 0
   protect: 0
   bubbled: 0
-  basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
+  basicAttack: {fileID: 11400000, guid: 6132fdc15cd3e0740ad4f9ac90a917fe, type: 2}
   target: {fileID: 0}
   Test: 
   skills:
