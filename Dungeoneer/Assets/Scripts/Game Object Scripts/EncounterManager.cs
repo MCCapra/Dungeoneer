@@ -68,13 +68,22 @@ public class EncounterManager : MonoBehaviour
     [SerializeField] private GameObject charName;
 
     [SerializeField] private GameObject skillInfoTxt;
+    public PlayerProfile profile;
     [SerializeField] private GameObject settingsMenu;
-
 
 
     // Start is called before the first frame update
     void Start()
     {
+        profile = GameObject.Find("PlayerProfile").GetComponent<PlayerProfile>();
+
+        for(int i = 0; i < profile.party.Count; i++)
+        {
+            GameObject temp = Instantiate(profile.party[i], GameObject.Find("Panel").transform);
+            temp.GetComponent<RectTransform>().localPosition = allyPositions[i];
+            allies.Add(temp);
+        }
+
         actionStack = new Stack<GameObject>();
 
         foreach(GameObject a in allies)
@@ -109,8 +118,16 @@ public class EncounterManager : MonoBehaviour
             }
             else
             {
-                DeclareAction(actor.gameObject.GetComponent<Enemy>().chooseAction());
-                ChooseTarget(Random.Range(0, allies.Count));
+                if(Random.Range(0,1) < .5f)
+                {
+                    DeclareAction(actor.gameObject.GetComponent<Enemy>().enemySkill);
+                    ChooseTarget(Random.Range(0, allies.Count));
+                }
+                else
+                {
+                    DeclareAction(actor.basicAttack);
+                    ChooseTarget(Random.Range(0, allies.Count));
+                }
             }
         }
         else
@@ -129,6 +146,7 @@ public class EncounterManager : MonoBehaviour
         inProgress = a;
 
         if(!actor.taunted) actor.target = null; // should be deprecated when a taunt status effect is added
+        else { ResolveTurn(); }
 
         switch (a.TargetType)
         {
@@ -137,6 +155,8 @@ public class EncounterManager : MonoBehaviour
                 ShowTargetMenu(a.TargetEnemy); //change this to be set by the action chosen
                 break;
             case Action.TargetingType.None:
+                ResolveTurn();
+                break;
             case Action.TargetingType.All:
                 ResolveTurn();
                 break;
@@ -199,7 +219,7 @@ public class EncounterManager : MonoBehaviour
                     foreach (GameObject e in allies)
                     {
                         inProgress.AppliedEffect.OnEffectApplied(actor, e.GetComponent<Character>());
-                        e.GetComponent<Enemy>().ApplyEffect(inProgress.AppliedEffect);
+                        e.GetComponent<Character>().ApplyEffect(inProgress.AppliedEffect);
                     }
                 }
                 break;
@@ -215,6 +235,14 @@ public class EncounterManager : MonoBehaviour
 
         baseMenu.transform.GetChild(1).GetComponent<Button>().interactable = true;
 
+        //Skip over stunned and dead people
+        while(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 || actionStack.Peek().GetComponent<Entity>().stunned && actionStack.Count > 0)
+        {
+            Debug.Log(actionStack.Peek().GetComponent<Entity>().e_name);
+            actionStack.Pop();
+        }
+
+
         if (allies.Count <= 0)
         {
             returnToShop();
@@ -224,21 +252,10 @@ public class EncounterManager : MonoBehaviour
         {
             Respawn();
         }
-        
-        //Skip over stunned and dead people
-        while(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 || actionStack.Peek().GetComponent<Entity>().stunned)
-        {
-            if(actionStack.Peek().GetComponent<Entity>().hitpoints <= 0 && actionStack.Peek().GetComponent<Entity>() is Enemy)
-            {
-                GameObject.Find("Player Profile").GetComponent<PlayerProfile>().gold += actionStack.Peek().GetComponent<Enemy>().GiveGold();
-            }
-
-            actionStack.Pop();
-        }
 
 
         //Start next turn
-        if(actionStack.Count <= 0)
+        if (actionStack.Count <= 0)
         {
             Initiative();
         }
@@ -374,7 +391,9 @@ public class EncounterManager : MonoBehaviour
 
         foreach (Entity e in holder)
         {
+            
             actionStack.Push(e.gameObject);
+            Debug.Log(actionStack.Peek());
         }
 
         //Debug.Log(actionStack.Peek().name);
@@ -420,7 +439,7 @@ public class EncounterManager : MonoBehaviour
         for(int i = 0; i < 4; i++)
         {
             int randNum = Random.Range(0, possibleEnemies.Count-1);
-            newEnemies.Add(GameObject.Instantiate(possibleEnemies[randNum], GameObject.Find("Canvas/Panel").transform));
+            newEnemies.Add(Instantiate(possibleEnemies[randNum], GameObject.Find("Canvas/Panel").transform));
             newEnemies[i].GetComponent<RectTransform>().localPosition = enemyPositions[i];
             newEnemies[i].GetComponent<Entity>().OnSpawn();
             newEnemyBars.Add(newEnemies[i].transform.GetChild(0).GetChild(0).gameObject);

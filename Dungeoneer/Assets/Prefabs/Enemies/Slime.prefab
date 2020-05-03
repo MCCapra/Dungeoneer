@@ -138,7 +138,7 @@ MonoBehaviour:
   magic: 1
   magDefense: 1
   speed: 5
-  e_name: testEnemy1
+  e_name: Slime
   tier: 0
   maxMana: 0
   mana: 0
@@ -149,15 +149,22 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
+  taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: 0c0dfb3e32718ed44a43cc5c0ee9f632, type: 2}
   target: {fileID: 0}
   Test: 
   skills:
   - {fileID: 11400000, guid: de1e98d14b110ea4e810b2ba425ea3d3, type: 2}
   - {fileID: 11400000, guid: a9bcd35b653af1941b024de0319c4899, type: 2}
+  icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
+  enemySkill: {fileID: 11400000, guid: a9bcd35b653af1941b024de0319c4899, type: 2}
 --- !u!1 &2873068347691361879
 GameObject:
   m_ObjectHideFlags: 0

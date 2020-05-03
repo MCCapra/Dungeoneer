@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 169}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379861526244544681
@@ -149,7 +149,13 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 1
   magDmgMod: 1
+  dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
+  taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
@@ -158,6 +164,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05575e355f29f5342a4bca093d0bf8bd, type: 2}
   - {fileID: 11400000, guid: bdda80563400aac41bfecb10686c8170, type: 2}
   - {fileID: 11400000, guid: 5e4a030ffc3190d4da37bb09711812d2, type: 2}
+  icon: {fileID: 0}
   items: []
 --- !u!1 &4793808129967387369
 GameObject:

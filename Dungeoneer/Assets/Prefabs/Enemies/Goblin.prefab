@@ -285,7 +285,7 @@ MonoBehaviour:
   magic: 1
   magDefense: 1
   speed: 5
-  e_name: testEnemy2
+  e_name: Goblin
   tier: 0
   maxMana: 0
   mana: 0
@@ -296,12 +296,19 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
+  taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
   skills:
   - {fileID: 11400000, guid: 938bb61a54ace874586601dec8d44c43, type: 2}
   - {fileID: 11400000, guid: 9028b4657c03e6647b26c900f4370244, type: 2}
+  icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
+  enemySkill: {fileID: 11400000, guid: 938bb61a54ace874586601dec8d44c43, type: 2}

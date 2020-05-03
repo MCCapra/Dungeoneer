@@ -285,7 +285,7 @@ MonoBehaviour:
   magic: 1
   magDefense: 1
   speed: 5
-  e_name: testEnemy3
+  e_name: Minotaur
   tier: 0
   maxMana: 0
   mana: 0
@@ -296,12 +296,19 @@ MonoBehaviour:
   spdMod: 0
   dmgMod: 0
   magDmgMod: 0
+  dmgTknMod: 0
+  dodgeChance: 0
   silenced: 0
+  taunted: 0
+  stunned: 0
+  protect: 0
+  bubbled: 0
   basicAttack: {fileID: 11400000, guid: b1a50eba08c8a3749a548851202c5e9d, type: 2}
   target: {fileID: 0}
   Test: 
   skills:
   - {fileID: 11400000, guid: d44c6e0799ce8c2428b81e3b047770b9, type: 2}
   - {fileID: 11400000, guid: 6bc93336cf27e91459fc75f6ed77a99f, type: 2}
+  icon: {fileID: 0}
   gold_reward: 0
-  itemDrop: {fileID: 0}
+  enemySkill: {fileID: 11400000, guid: d44c6e0799ce8c2428b81e3b047770b9, type: 2}
