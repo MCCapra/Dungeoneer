@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ebf3861539784599dc8942e10dea6, type: 3}
   m_Name: Toxic Stab
   m_EditorClassIdentifier: 
-  a_name: 
-  description: 
-  effect: {fileID: 0}
-  targetingType: 0
-  targetEnemy: 0
+  a_name: Toxic Stab
+  description: Deal 30% damage to an enemy, and then poison them for 2 rounds.
+  effect: {fileID: 11400000, guid: 67866784ccbf2c94e93343c4f49f2499, type: 2}
+  targetingType: 1
+  targetEnemy: 1

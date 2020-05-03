@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc4c5df362249b438f658911c38dbf7, type: 3}
   m_Name: DMGup30%1Turn
   m_EditorClassIdentifier: 
-  EffectLength: 0
+  EffectLength: 1
   silence: 0
   taunted: 0
   stunned: 0
